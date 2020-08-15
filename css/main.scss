@@ -1,0 +1,362 @@
+@use 'fonts';
+@use 'sass:color';
+
+$body-font:      'Noto Sans', sans-serif;
+$serif-font:     'Noto Serif', sans-serif;
+$ornaments-font: 'Fertigo Pro';
+
+$bg-color:     #ebeedc;
+$fg-color:     #504f4f;
+
+$content-width: 750px;
+
+@function mix-bg($col, $weight) {
+  @return mix($col, $bg-color, $weight*100)
+}
+
+
+html {
+  font: 18px/30px $body-font;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  color: $fg-color;
+}
+
+@mixin vn-logo {
+  > h1 {
+    margin: 0;
+
+    > a {
+      font-family: 'Alegreya Sans';
+      font-weight: 500;
+      font-size: 35px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+
+      > span {
+        position: relative;
+        top: 25px;
+        left: -24px;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #775c9b;
+  border-bottom: 2px solid $bg-color;
+  z-index: 10;
+  user-select: none;
+
+  > div {
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
+
+    @include vn-logo;
+
+    > h1 {
+      position: absolute;
+      top: 6px;
+      left: 20px;
+    }
+
+    > nav {
+      > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1em;
+
+        > li {
+          display: inline-block;
+          padding: 28px 16px 20px 16px;
+
+          &.sel {
+            background: #4b3a62;
+            > a {
+              border-bottom: 4px solid #8a72a9;
+            }
+          }
+          > a {
+            text-decoration: none;
+            color: #fff;
+            &:hover {
+              color: mix-bg($fg-color, 0.65);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.top-image {
+
+  > img {
+    width: 1300px;
+    margin: 68px 0 0 calc(50vw - 650px);
+    z-index: -1;
+  }
+
+  > div.text {
+    position: absolute;
+    top: 330px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+
+    > h1 {
+      margin: 0;
+      font-family: 'Alegreya Sans';
+      font-weight: 100;
+      font-size: 120px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    > h2 {
+      margin-top: 70px;
+      font-family: 'Alegreya Sans';
+      font-weight: 400;
+      font-size: 34px;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@mixin hanging-quote {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: -40px;
+  margin-left: -65px;
+  font-family: $serif-font;
+  font-style: normal;
+  font-size: 206px;
+  line-height: 0;
+  content: '“';
+  color: mix-bg($fg-color, 0.2);
+}
+
+section.body {
+  background: $bg-color;
+  opacity: 0.99999;
+  z-index: 100;
+
+  .wrapper {
+    width: $content-width;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+
+  a {
+    color: #888;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+
+    &:hover {
+      color: #775c9b;
+      border-color: rgba(#775c9b, 0.4);
+    }
+  }
+
+  img {
+    &.left {
+      position: relative;
+      width: 37%;
+      left: -90px;
+      margin: 0 -40px 20px 0;
+      float: left;
+    }
+
+    &.right {
+      position: relative;
+      left: 90px;
+      width: 45%;
+      margin: 0 0 20px -50px;
+      float: right;
+    }
+  }
+
+  blockquote {
+    width: 90%;
+    margin: -10px auto 3em auto;
+    font-family: $serif-font;
+    font-style: italic;
+    font-size: 26px;
+    text-align: center;
+    line-height: 1.5em;
+    color: mix-bg($fg-color, 0.9);
+
+    &:before {
+      @include hanging-quote;
+    }
+  }
+
+  p {
+    margin-bottom: 1.3em;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 1em;
+    }
+  }
+
+  figure.testimonial {
+    margin: 0;
+    padding: 0;
+    clear: both;
+
+    &:before {
+      @include hanging-quote;
+      top: 42px;
+    }
+
+    > p {
+      width: 72%;
+      float: left;
+      margin: 0 20px 0 0;
+      padding: 0 20px 1.5em 0;
+      border-right: 1px solid #caccbd;
+      font-family: $serif-font;
+      font-style: italic;
+
+      &:nth-last-child(2) {
+        margin-bottom: 80px;
+        padding-bottom: 0;
+      }
+    }
+    > figcaption {
+      span {
+        color: mix-bg($fg-color, 0.6);
+      }
+    }
+  }
+}
+
+@mixin sepa {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0.5em 0;
+  font-family: $ornaments-font;
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: mix-bg($fg-color, 0.2);
+  content: '\222b';
+}
+
+.sepa-before {
+  &:before {
+    @include sepa;
+  }
+
+  &.more-space {
+    margin: 0.7em 0;
+  }
+}
+
+.sepa-after {
+  &:after {
+    @include sepa;
+  }
+
+  &.more-space {
+    margin: 0.7em 0;
+  }
+}
+
+section.bottom-quote {
+  display: flex;
+  height: 260px;
+  clear: both;
+  align-items: center;
+
+  &.home             { background-image: url(../img/home-bottom.jpg); }
+  &.about            { background-image: url(../img/about-bottom.jpg); }
+  &.testimonials     { background-image: url(../img/testimonials-bottom.jpg); }
+  &.private-sessions { background-image: url(../img/private-sessions-bottom.jpg); }
+
+  blockquote {
+    width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: $serif-font;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #614c80;
+  user-select: none;
+
+  @include vn-logo;
+
+  h1 {
+    margin: 20px 140px 0 calc((100vw - #{$content-width}) / 2);
+    float: left;
+
+    > a {
+      font-size: 40px;
+
+      > span {
+        left: -27px;
+        top: 29px;
+      }
+    }
+  }
+
+  > nav {
+    width: $content-width;
+    margin: 0 auto;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 17px;
+      line-height: 35px;
+
+      > li {
+        display: block;
+
+        > a {
+          text-decoration: none;
+          color: #fff;
+
+          &:hover {
+            color: mix-bg($fg-color, 0.7);
+          }
+        }
+      }
+
+      &.nav1 {
+        margin-right: 110px;
+        float: left;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,102 @@
+/* Noto Serif */
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif-Italic.woff2') format('woff2'),
+         url('../font/subset-NotoSerif-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif.woff2') format('woff2'),
+         url('../font/subset-NotoSerif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif-Bold.woff2') format('woff2'),
+         url('../font/subset-NotoSerif-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif-BoldItalic.woff2') format('woff2'),
+         url('../font/subset-NotoSerif-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../font/subset-NotoSans-BoldItalic.woff2') format('woff2'),
+         url('../font/subset-NotoSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Noto Sans */
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../font/subset-NotoSans-Italic.woff2') format('woff2'),
+         url('../font/subset-NotoSans-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../font/subset-NotoSans-Bold.woff2') format('woff2'),
+         url('../font/subset-NotoSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../font/subset-NotoSans.woff2') format('woff2'),
+         url('../font/subset-NotoSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Alegreya Sans */
+@font-face {
+    font-family: 'Alegreya Sans';
+    src: url('../font/subset-AlegreyaSans-Thin.woff2') format('woff2'),
+         url('../font/subset-AlegreyaSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alegreya Sans';
+    src: url('../font/subset-AlegreyaSans-Medium.woff2') format('woff2'),
+         url('../font/subset-AlegreyaSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fertigo Pro */
+@font-face {
+  font-family: "Fertigo Pro";
+  src: url("../font/subset-FertigoPro-Regular.woff2") format("woff2"),
+       url("../font/subset-FertigoPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
