@@ -1,0 +1,409 @@
+@charset "UTF-8";
+/* Noto Serif */
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../font/subset-NotoSerif-Italic.woff2") format("woff2"), url("../font/subset-NotoSerif-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../font/subset-NotoSerif.woff2") format("woff2"), url("../font/subset-NotoSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../font/subset-NotoSerif-Bold.woff2") format("woff2"), url("../font/subset-NotoSerif-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("../font/subset-NotoSerif-BoldItalic.woff2") format("woff2"), url("../font/subset-NotoSerif-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../font/subset-NotoSans-BoldItalic.woff2") format("woff2"), url("../font/subset-NotoSans-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+/* Noto Sans */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../font/subset-NotoSans-Italic.woff2") format("woff2"), url("../font/subset-NotoSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../font/subset-NotoSans-Bold.woff2") format("woff2"), url("../font/subset-NotoSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../font/subset-NotoSans.woff2") format("woff2"), url("../font/subset-NotoSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* Alegreya Sans */
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../font/subset-AlegreyaSans-Thin.woff2") format("woff2"), url("../font/subset-AlegreyaSans-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Alegreya Sans";
+  src: url("../font/subset-AlegreyaSans-Medium.woff2") format("woff2"), url("../font/subset-AlegreyaSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Fertigo Pro */
+@font-face {
+  font-family: "Fertigo Pro";
+  src: url("../font/subset-FertigoPro-Regular.woff2") format("woff2"), url("../font/subset-FertigoPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font: 18px/30px "Noto Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ebeedc;
+  color: #504f4f;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #775c9b;
+  border-bottom: 2px solid #ebeedc;
+  z-index: 10;
+  user-select: none;
+}
+header > div {
+  position: relative;
+  width: 1300px;
+  margin: 0 auto;
+}
+header > div > h1 {
+  margin: 0;
+}
+header > div > h1 > a {
+  font-family: "Alegreya Sans";
+  font-weight: 500;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+header > div > h1 > a > span {
+  position: relative;
+  top: 25px;
+  left: -24px;
+  font-weight: 100;
+}
+header > div > h1 {
+  position: absolute;
+  top: 6px;
+  left: 20px;
+}
+header > div > nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1em;
+}
+header > div > nav > ul > li {
+  display: inline-block;
+  padding: 28px 16px 20px 16px;
+}
+header > div > nav > ul > li.sel {
+  background: #4b3a62;
+}
+header > div > nav > ul > li.sel > a {
+  border-bottom: 4px solid #8a72a9;
+}
+header > div > nav > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+header > div > nav > ul > li > a:hover {
+  color: #868780;
+}
+
+section.top-image > img {
+  width: 1300px;
+  margin: 68px 0 0 calc(50vw - 650px);
+  z-index: -1;
+}
+section.top-image > div.text {
+  position: absolute;
+  top: 330px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+}
+section.top-image > div.text > h1 {
+  margin: 0;
+  font-family: "Alegreya Sans";
+  font-weight: 100;
+  font-size: 120px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+section.top-image > div.text > h2 {
+  margin-top: 70px;
+  font-family: "Alegreya Sans";
+  font-weight: 400;
+  font-size: 34px;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+section.body {
+  background: #ebeedc;
+  opacity: 0.99999;
+  z-index: 100;
+}
+section.body .wrapper {
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+section.body a {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+}
+section.body a:hover {
+  color: #775c9b;
+  border-color: rgba(119, 92, 155, 0.4);
+}
+section.body img.left {
+  position: relative;
+  width: 37%;
+  left: -90px;
+  margin: 0 -40px 20px 0;
+  float: left;
+}
+section.body img.right {
+  position: relative;
+  left: 90px;
+  width: 45%;
+  margin: 0 0 20px -50px;
+  float: right;
+}
+section.body blockquote {
+  width: 90%;
+  margin: -10px auto 3em auto;
+  font-family: "Noto Serif", sans-serif;
+  font-style: italic;
+  font-size: 26px;
+  text-align: center;
+  line-height: 1.5em;
+  color: #605f5d;
+}
+section.body blockquote:before {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: -40px;
+  margin-left: -65px;
+  font-family: "Noto Serif", sans-serif;
+  font-style: normal;
+  font-size: 206px;
+  line-height: 0;
+  content: "“";
+  color: #cccec0;
+}
+section.body p {
+  margin-bottom: 1.3em;
+}
+section.body p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+section.body figure.testimonial {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+section.body figure.testimonial:before {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: -40px;
+  margin-left: -65px;
+  font-family: "Noto Serif", sans-serif;
+  font-style: normal;
+  font-size: 206px;
+  line-height: 0;
+  content: "“";
+  color: #cccec0;
+  top: 42px;
+}
+section.body figure.testimonial > p {
+  width: 72%;
+  float: left;
+  margin: 0 20px 0 0;
+  padding: 0 20px 1.5em 0;
+  border-right: 1px solid #caccbd;
+  font-family: "Noto Serif", sans-serif;
+  font-style: italic;
+}
+section.body figure.testimonial > p:nth-last-child(2) {
+  margin-bottom: 80px;
+  padding-bottom: 0;
+}
+section.body figure.testimonial > figcaption span {
+  color: #8e8f87;
+}
+
+.sepa-before:before {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0.5em 0;
+  font-family: "Fertigo Pro";
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: #cccec0;
+  content: "∫";
+}
+.sepa-before.more-space {
+  margin: 0.7em 0;
+}
+
+.sepa-after:after {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0.5em 0;
+  font-family: "Fertigo Pro";
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: #cccec0;
+  content: "∫";
+}
+.sepa-after.more-space {
+  margin: 0.7em 0;
+}
+
+section.bottom-quote {
+  display: flex;
+  height: 260px;
+  clear: both;
+  align-items: center;
+}
+section.bottom-quote.home {
+  background-image: url(../img/home-bottom.jpg);
+}
+section.bottom-quote.about {
+  background-image: url(../img/about-bottom.jpg);
+}
+section.bottom-quote.testimonials {
+  background-image: url(../img/testimonials-bottom.jpg);
+}
+section.bottom-quote.private-sessions {
+  background-image: url(../img/private-sessions-bottom.jpg);
+}
+section.bottom-quote blockquote {
+  width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  font-family: "Noto Serif", sans-serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 50px;
+  text-align: center;
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #614c80;
+  user-select: none;
+}
+footer > h1 {
+  margin: 0;
+}
+footer > h1 > a {
+  font-family: "Alegreya Sans";
+  font-weight: 500;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+footer > h1 > a > span {
+  position: relative;
+  top: 25px;
+  left: -24px;
+  font-weight: 100;
+}
+footer h1 {
+  margin: 20px 140px 0 calc((100vw - 750px) / 2);
+  float: left;
+}
+footer h1 > a {
+  font-size: 40px;
+}
+footer h1 > a > span {
+  left: -27px;
+  top: 29px;
+}
+footer > nav {
+  width: 750px;
+  margin: 0 auto;
+}
+footer > nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 17px;
+  line-height: 35px;
+}
+footer > nav > ul > li {
+  display: block;
+}
+footer > nav > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+footer > nav > ul > li > a:hover {
+  color: #7f7f79;
+}
+footer > nav > ul.nav1 {
+  margin-right: 110px;
+  float: left;
+}
+
+/*# sourceMappingURL=main.css.map */
