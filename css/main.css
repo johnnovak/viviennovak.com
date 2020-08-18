@@ -89,7 +89,7 @@
   font-display: swap;
 }
 html {
-  font: 18px/30px "Noto Sans", sans-serif;
+  font: 16px/26px "Noto Sans", sans-serif;
 }
 
 body {
@@ -100,23 +100,19 @@ body {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 68px;
   background-color: #775c9b;
   border-bottom: 2px solid #ebeedc;
   z-index: 1;
   user-select: none;
+  padding: 1em;
 }
 header > div {
   position: relative;
-  width: 1300px;
   margin: 0 auto;
 }
 header > div > h1 {
   margin: 0;
+  text-align: center;
 }
 header > div > h1 > a {
   font-family: "Alegreya Sans";
@@ -127,33 +123,31 @@ header > div > h1 > a {
   text-decoration: none;
 }
 header > div > h1 > a > span {
-  position: relative;
-  top: 25px;
-  left: -24px;
   font-weight: 100;
 }
 header > div > h1 {
-  position: absolute;
-  top: 6px;
-  left: 20px;
+  margin-bottom: 0.5em;
 }
 header > div > nav > ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
-  line-height: 1em;
+  line-height: 1.8em;
 }
 header > div > nav > ul > li {
   display: inline-block;
-  padding: 28px 16px 20px 16px;
 }
-header > div > nav > ul > li.sel {
-  background: #4b3a62;
+header > div > nav > ul > li:not(:last-child):after {
+  font-family: "Fertigo Pro";
+  content: "Ω";
+  color: #fff;
+  padding: 0 0.4em;
+  opacity: 0.4;
 }
 header > div > nav > ul > li.sel > a {
-  border-bottom: 4px solid #8a72a9;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
 header > div > nav > ul > li > a {
   text-decoration: none;
@@ -164,34 +158,11 @@ header > div > nav > ul > li > a:hover {
 }
 
 section.top-image > img {
-  width: 1300px;
-  min-height: 615px;
-  margin: 68px 0 0 calc(50vw - 650px);
+  width: 100%;
   z-index: -1;
 }
 section.top-image > div.text {
-  position: absolute;
-  top: 480px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  user-select: none;
-}
-section.top-image > div.text > h1 {
-  margin: 0;
-  font-family: "Alegreya Sans";
-  font-weight: 100;
-  font-size: 120px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-section.top-image > div.text > h2 {
-  margin-top: 70px;
-  font-family: "Alegreya Sans";
-  font-weight: 400;
-  font-size: 34px;
-  text-transform: none;
-  letter-spacing: 1px;
+  display: none;
 }
 
 section.body {
@@ -200,9 +171,10 @@ section.body {
   z-index: 2;
 }
 section.body .wrapper {
-  width: 750px;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 40px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 section.body h2, section.body h3 {
   margin: 2.5em 0 1.5em 0;
@@ -225,7 +197,7 @@ section.body h3.sepa:before {
   width: 100%;
   margin: 0.5em 0;
   font-family: "Fertigo Pro";
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: normal;
   font-style: normal;
   text-align: center;
@@ -267,23 +239,23 @@ section.body ul li:before {
   content: "Ω";
 }
 section.body blockquote {
-  width: 90%;
+  width: 75%;
   margin: 0em auto 3em auto;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.5em;
   color: #605f5d;
+  text-align: center;
 }
 section.body blockquote:before {
   float: left;
   position: relative;
-  top: 30px;
-  left: -40px;
-  margin-left: -65px;
+  top: 20px;
+  left: -50px;
   font-family: "Noto Serif", sans-serif;
   font-style: normal;
-  font-size: 206px;
+  font-size: 120px;
   line-height: 0;
   content: "“";
   color: #cccec0;
@@ -291,15 +263,13 @@ section.body blockquote:before {
 section.body img.left {
   position: relative;
   width: 37%;
-  left: -90px;
-  margin: 0 -40px 20px 0;
+  margin: 0 15px 15px 0;
   float: left;
 }
 section.body img.right {
   position: relative;
-  left: 90px;
   width: 45%;
-  margin: 0 0 20px -50px;
+  margin: 0 0 15px 20px;
   float: right;
 }
 section.body figure.testimonial {
@@ -310,12 +280,11 @@ section.body figure.testimonial {
 section.body figure.testimonial:before {
   float: left;
   position: relative;
-  top: 30px;
-  left: -40px;
-  margin-left: -65px;
+  top: 20px;
+  left: -50px;
   font-family: "Noto Serif", sans-serif;
   font-style: normal;
-  font-size: 206px;
+  font-size: 120px;
   line-height: 0;
   content: "“";
   color: #cccec0;
@@ -344,7 +313,7 @@ section.body figure.testimonial > figcaption span {
   width: 100%;
   margin: 0.5em 0;
   font-family: "Fertigo Pro";
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: normal;
   font-style: normal;
   text-align: center;
@@ -352,7 +321,7 @@ section.body figure.testimonial > figcaption span {
   content: "∫";
 }
 .sepa-before.more-space:before {
-  margin: 0.7em 0;
+  margin: 0.5em 0;
 }
 .sepa-before.disclaimer:before, .sepa-before.donation:before, .sepa-before.contact:before {
   margin: 0.85em 0 0.45em 0;
@@ -364,7 +333,7 @@ section.body figure.testimonial > figcaption span {
   width: 100%;
   margin: 0.5em 0;
   font-family: "Fertigo Pro";
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: normal;
   font-style: normal;
   text-align: center;
@@ -372,7 +341,7 @@ section.body figure.testimonial > figcaption span {
   content: "∫";
 }
 .sepa-after.more-space:after {
-  margin: 0.8em 0;
+  margin: 0.6em 0;
 }
 .sepa-after.more-space2:after {
   margin: 1.8em 0 1em 0;
@@ -380,7 +349,6 @@ section.body figure.testimonial > figcaption span {
 
 section.bottom-quote {
   display: flex;
-  height: 260px;
   clear: both;
   align-items: center;
 }
@@ -397,13 +365,13 @@ section.bottom-quote.private-sessions {
   background-image: url(../img/private-sessions-bottom.jpg);
 }
 section.bottom-quote blockquote {
-  width: 1200px;
-  margin: 0 auto;
+  width: 80%;
+  margin: 1.5em auto;
   color: #fff;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
-  font-size: 32px;
-  line-height: 50px;
+  font-size: 20px;
+  line-height: 1.6em;
   text-align: center;
 }
 
@@ -414,6 +382,7 @@ footer {
 }
 footer > h1 {
   margin: 0;
+  text-align: center;
 }
 footer > h1 > a {
   font-family: "Alegreya Sans";
@@ -424,14 +393,10 @@ footer > h1 > a {
   text-decoration: none;
 }
 footer > h1 > a > span {
-  position: relative;
-  top: 25px;
-  left: -24px;
   font-weight: 100;
 }
 footer h1 {
-  margin: 20px 140px 0 calc((100vw - 750px) / 2);
-  float: left;
+  margin-bottom: 1em;
 }
 footer h1 > a {
   font-size: 40px;
@@ -441,7 +406,6 @@ footer h1 > a > span {
   top: 29px;
 }
 footer > nav {
-  width: 750px;
   margin: 0 auto;
 }
 footer > nav > ul {
@@ -450,6 +414,7 @@ footer > nav > ul {
   list-style: none;
   font-size: 17px;
   line-height: 35px;
+  text-align: center;
 }
 footer > nav > ul > li {
   display: block;
@@ -461,14 +426,6 @@ footer > nav > ul > li > a {
 footer > nav > ul > li > a:hover {
   opacity: 0.7;
 }
-footer > nav > ul.nav1 {
-  margin-right: 110px;
-  float: left;
-}
-footer > nav > ul.nav2 {
-  margin-left: 590px;
-}
-
 div.abc {
   margin-bottom: 2em;
   text-align: center;
@@ -612,6 +569,39 @@ div.abc button.valid {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 400px) {
+  html {
+    font: 17px/28px "Noto Sans", sans-serif;
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 540px) {
+  section.top-image > div.text {
+    display: block;
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+  }
+  section.top-image > div.text > h1 {
+    margin: 0;
+    font-family: "Alegreya Sans";
+    font-weight: 100;
+    font-size: 80px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+/*--------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------*/
+@media (min-width: 1400px) {
+  body {
+    background: red !important;
   }
 }
 
