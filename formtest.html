@@ -13,8 +13,6 @@
 <p>Message</p>
 <textarea id="message-input" rows="3" placeholder="Enter your message…" class="form-control"></textarea><br/>
 
-<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control"></div>
-
 <button type="button">Submit</button>
 
 <script>
@@ -37,8 +35,6 @@
       message: document.getElementById('message-input').value
     }
 
-    console.log(data);
-
     xhr.open('POST', 'https://cxs5fa9xtc.execute-api.us-east-2.amazonaws.com/default/mailfwd');
     xhr.send(JSON.stringify(data));
   }
@@ -53,3 +49,4 @@
 
 </body>
 </html>
+

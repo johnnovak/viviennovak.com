@@ -2,13 +2,6 @@
 /* Noto Serif */
 @font-face {
   font-family: "Noto Serif";
-  src: url("../font/subset-NotoSerif-Italic.woff2") format("woff2"), url("../font/subset-NotoSerif-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
   src: url("../font/subset-NotoSerif.woff2") format("woff2"), url("../font/subset-NotoSerif.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -16,26 +9,38 @@
 }
 @font-face {
   font-family: "Noto Serif";
-  src: url("../font/subset-NotoSerif-Bold.woff2") format("woff2"), url("../font/subset-NotoSerif-Bold.woff") format("woff");
-  font-weight: bold;
+  src: url("../font/subset-NotoSerif-Italic.woff2") format("woff2"), url("../font/subset-NotoSerif-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+/*
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif-Bold.woff2') format('woff2'),
+         url('../font/subset-NotoSerif-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('../font/subset-NotoSerif-BoldItalic.woff2') format('woff2'),
+         url('../font/subset-NotoSerif-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+*/
+/* Noto Sans */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../font/subset-NotoSans.woff2") format("woff2"), url("../font/subset-NotoSans.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Noto Serif";
-  src: url("../font/subset-NotoSerif-BoldItalic.woff2") format("woff2"), url("../font/subset-NotoSerif-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Sans";
-  src: url("../font/subset-NotoSans-BoldItalic.woff2") format("woff2"), url("../font/subset-NotoSans-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-/* Noto Sans */
 @font-face {
   font-family: "Noto Sans";
   src: url("../font/subset-NotoSans-Italic.woff2") format("woff2"), url("../font/subset-NotoSans-Italic.woff") format("woff");
@@ -50,13 +55,16 @@
   font-style: normal;
   font-display: swap;
 }
+/*
 @font-face {
-  font-family: "Noto Sans";
-  src: url("../font/subset-NotoSans.woff2") format("woff2"), url("../font/subset-NotoSans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Noto Sans';
+    src: url('../font/subset-NotoSans-BoldItalic.woff2') format('woff2'),
+         url('../font/subset-NotoSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
 }
+*/
 /* Alegreya Sans */
 @font-face {
   font-family: "Alegreya Sans";
@@ -99,7 +107,7 @@ header {
   height: 68px;
   background-color: #775c9b;
   border-bottom: 2px solid #ebeedc;
-  z-index: 10;
+  z-index: 1;
   user-select: none;
 }
 header > div {
@@ -152,7 +160,7 @@ header > div > nav > ul > li > a {
   color: #fff;
 }
 header > div > nav > ul > li > a:hover {
-  color: #868780;
+  opacity: 0.75;
 }
 
 section.top-image > img {
@@ -163,7 +171,7 @@ section.top-image > img {
 }
 section.top-image > div.text {
   position: absolute;
-  top: 330px;
+  top: 480px;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -189,12 +197,50 @@ section.top-image > div.text > h2 {
 section.body {
   background: #ebeedc;
   opacity: 0.99999;
-  z-index: 100;
+  z-index: 2;
 }
 section.body .wrapper {
   width: 750px;
   margin: 0 auto;
   padding-top: 80px;
+}
+section.body h2, section.body h3 {
+  margin: 2.5em 0 1.5em 0;
+  font-family: "Noto Serif", sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: italic;
+  text-align: center;
+  color: #6f6f6b;
+}
+section.body h3 {
+  margin: 3em 0 1em 0;
+  font-size: 26px;
+  text-align: left;
+  color: #8e8f87;
+}
+section.body h3.sepa:before {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0.5em 0;
+  font-family: "Fertigo Pro";
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: #cccec0;
+  content: "∫";
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  content: "∫";
+}
+section.body p {
+  margin-bottom: 1.3em;
+}
+section.body p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 1em;
 }
 section.body a {
   color: #888;
@@ -205,27 +251,27 @@ section.body a:hover {
   color: #775c9b;
   border-color: rgba(119, 92, 155, 0.4);
 }
-section.body img.left {
-  position: relative;
-  width: 37%;
-  left: -90px;
-  margin: 0 -40px 20px 0;
-  float: left;
+section.body ul {
+  margin: 0;
+  padding: 0 0 0 3rem;
+  list-style: none;
 }
-section.body img.right {
-  position: relative;
-  left: 90px;
-  width: 45%;
-  margin: 0 0 20px -50px;
-  float: right;
+section.body ul li {
+  margin-bottom: 0.8em;
+}
+section.body ul li:before {
+  margin-left: -1.7rem;
+  padding-right: 0.8rem;
+  font-family: "Fertigo Pro";
+  color: #9e9f96;
+  content: "Ω";
 }
 section.body blockquote {
   width: 90%;
-  margin: -10px auto 3em auto;
+  margin: 0em auto 3em auto;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
   font-size: 26px;
-  text-align: center;
   line-height: 1.5em;
   color: #605f5d;
 }
@@ -242,12 +288,19 @@ section.body blockquote:before {
   content: "“";
   color: #cccec0;
 }
-section.body p {
-  margin-bottom: 1.3em;
+section.body img.left {
+  position: relative;
+  width: 37%;
+  left: -90px;
+  margin: 0 -40px 20px 0;
+  float: left;
 }
-section.body p:last-child {
-  margin-bottom: 0;
-  padding-bottom: 1em;
+section.body img.right {
+  position: relative;
+  left: 90px;
+  width: 45%;
+  margin: 0 0 20px -50px;
+  float: right;
 }
 section.body figure.testimonial {
   margin: 0;
@@ -298,8 +351,11 @@ section.body figure.testimonial > figcaption span {
   color: #cccec0;
   content: "∫";
 }
-.sepa-before.more-space {
+.sepa-before.more-space:before {
   margin: 0.7em 0;
+}
+.sepa-before.disclaimer:before, .sepa-before.donation:before, .sepa-before.contact:before {
+  margin: 0.85em 0 0.45em 0;
 }
 
 .sepa-after:after {
@@ -315,8 +371,11 @@ section.body figure.testimonial > figcaption span {
   color: #cccec0;
   content: "∫";
 }
-.sepa-after.more-space {
-  margin: 0.7em 0;
+.sepa-after.more-space:after {
+  margin: 0.8em 0;
+}
+.sepa-after.more-space2:after {
+  margin: 1.8em 0 1em 0;
 }
 
 section.bottom-quote {
@@ -400,11 +459,160 @@ footer > nav > ul > li > a {
   color: #fff;
 }
 footer > nav > ul > li > a:hover {
-  color: #7f7f79;
+  opacity: 0.7;
 }
 footer > nav > ul.nav1 {
   margin-right: 110px;
   float: left;
+}
+footer > nav > ul.nav2 {
+  margin-left: 590px;
+}
+
+div.abc {
+  margin-bottom: 2em;
+  text-align: center;
+}
+div.abc * {
+  box-sizing: border-box;
+}
+div.abc div.error {
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffc8c4;
+  color: rgba(136, 0, 0, 0.6);
+  border-radius: 5px;
+  margin-top: -10px;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  text-align: left;
+}
+div.abc a {
+  border: none;
+  text-decoration: none;
+}
+div.abc input:focus,
+div.abc select:focus,
+div.abc textarea:focus,
+div.abc button:focus {
+  outline: none;
+}
+div.abc input, div.abc textarea, div.abc button {
+  display: block;
+  width: 100%;
+  margin: 15px 0 10px 0;
+  padding: 8px 14px;
+  border-radius: 5px;
+  border: 2px solid #c4c6b9;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
+  background: #f9faf5;
+  color: #504f4f;
+}
+div.abc input::placeholder, div.abc textarea::placeholder {
+  opacity: 0.7;
+}
+div.abc input.error, div.abc textarea.error {
+  border: 2px solid #faa;
+}
+div.abc textarea {
+  height: 180px;
+}
+div.abc button {
+  background: #8e8f87;
+  border-color: #8e8f87;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+div.abc button.valid {
+  background: #8b4;
+  border-color: #8b4;
+}
+
+#contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#contact-modal > div {
+  position: fixed;
+  top: calc((100vh - (130px + 2 * 20px)) / 2);
+  left: calc((100vw - (300px + 2 * 20px)) / 2);
+  width: 300px;
+  height: 130px;
+  padding: 20px;
+  background: #ebeedc;
+  border-radius: 15px;
+  box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#contact-modal > div > p {
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+#contact-modal > div #close-modal {
+  display: block;
+  color: #ebeedc;
+  background: #6f6f6b;
+  padding: 0 2em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#contact-modal > div #close-modal:hover {
+  background: #868780;
+}
+
+/* Spinner */
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  left: 6px;
+  width: 19px;
+  height: 19px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  margin: 3px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
