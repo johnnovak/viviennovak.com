@@ -1,2 +1,24 @@
-/*
+/about/*
   cache-control: max-age=3600
+
+/css/*
+  cache-control: max-age=3600
+
+/font/*
+  cache-contro: max-age=604800
+
+/img/*
+  cache-contro: max-age=604800
+
+/js/*
+  cache-control: max-age=3600
+
+/private-sessions/*
+  cache-control: max-age=3600
+
+/testimonials/*
+  cache-control: max-age=3600
+
+/index.html
+  cache-control: max-age=3600
+
