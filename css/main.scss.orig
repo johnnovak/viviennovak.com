@@ -1,0 +1,583 @@
+@use 'fonts';
+@use 'sass:color';
+
+$body-font:      'Noto Sans', sans-serif;
+$serif-font:     'Noto Serif', sans-serif;
+$ornaments-font: 'Fertigo Pro';
+
+$bg-color:     #ebeedc;
+$fg-color:     #504f4f;
+
+$content-width: 750px;
+
+
+@function mix-bg($col, $weight) {
+  @return mix($col, $bg-color, $weight*100)
+}
+
+
+@mixin vn-logo {
+  > h1 {
+    margin: 0;
+
+    > a {
+      font-family: 'Alegreya Sans';
+      font-weight: 500;
+      font-size: 35px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+
+      > span {
+        position: relative;
+        top: 25px;
+        left: -24px;
+        font-weight: 100;
+      }
+    }
+  }
+}
+
+@mixin sepa {
+  display: block;
+  clear: both;
+  width: 100%;
+  margin: 0.5em 0;
+  font-family: $ornaments-font;
+  font-size: 8rem;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: mix-bg($fg-color, 0.2);
+  content: '\222b';
+}
+
+@mixin hanging-quote {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: -40px;
+  margin-left: -65px;
+  font-family: $serif-font;
+  font-style: normal;
+  font-size: 206px;
+  line-height: 0;
+  content: '“';
+  color: mix-bg($fg-color, 0.2);
+}
+
+
+html {
+  font: 18px/30px $body-font;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  color: $fg-color;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #775c9b;
+  border-bottom: 2px solid $bg-color;
+  z-index: 1;
+  user-select: none;
+
+  > div {
+    position: relative;
+    width: 1300px;
+    margin: 0 auto;
+
+    @include vn-logo;
+
+    > h1 {
+      position: absolute;
+      top: 6px;
+      left: 20px;
+    }
+
+    > nav {
+      > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1em;
+
+        > li {
+          display: inline-block;
+          padding: 28px 16px 20px 16px;
+
+          &.sel {
+            background: #4b3a62;
+            > a {
+              border-bottom: 4px solid #8a72a9;
+            }
+          }
+          > a {
+            text-decoration: none;
+            color: #fff;
+
+            &:hover {
+              opacity: 0.75;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.top-image {
+
+  > img {
+    width: 1300px;
+    min-height: 615px;
+    margin: 68px 0 0 calc(50vw - 650px);
+    z-index: -1;
+  }
+
+  > div.text {
+    position: absolute;
+    top: 480px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+
+    > h1 {
+      margin: 0;
+      font-family: 'Alegreya Sans';
+      font-weight: 100;
+      font-size: 120px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    > h2 {
+      margin-top: 70px;
+      font-family: 'Alegreya Sans';
+      font-weight: 400;
+      font-size: 34px;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+section.body {
+  background: $bg-color;
+  opacity: 0.99999;
+  z-index: 2;
+
+  .wrapper {
+    width: $content-width;
+    margin: 0 auto;
+    padding-top: 80px;
+  }
+
+  h2, h3 {
+    margin: 2.5em 0 1.5em 0;
+    font-family: $serif-font;
+    font-size: 32px;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    color: mix-bg($fg-color, 0.8);
+  }
+
+  h3 {
+    margin: 3em 0 1em 0;
+    font-size: 26px;
+    text-align: left;
+    color: mix-bg($fg-color, 0.6);
+
+    &.sepa:before {
+      @include sepa;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      content: '\222b';
+    }
+  }
+
+  p {
+    margin-bottom: 1.3em;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 1em;
+    }
+  }
+
+  a {
+    color: #888;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+
+    &:hover {
+      color: #775c9b;
+      border-color: rgba(#775c9b, 0.4);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 3rem;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.8em;
+
+      &:before {
+        margin-left: -1.7rem;
+        padding-right: 0.8rem;
+        font-family: $ornaments-font;
+        color: mix-bg($fg-color, 0.5);
+        content: '\03a9';
+      }
+    }
+  }
+
+  blockquote {
+    width: 90%;
+    margin: 0em auto 3em auto;
+    font-family: $serif-font;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.5em;
+    color: mix-bg($fg-color, 0.9);
+
+    &:before {
+      @include hanging-quote;
+    }
+  }
+
+  img {
+    &.left {
+      position: relative;
+      width: 37%;
+      left: -90px;
+      margin: 0 -40px 20px 0;
+      float: left;
+    }
+
+    &.right {
+      position: relative;
+      left: 90px;
+      width: 45%;
+      margin: 0 0 20px -50px;
+      float: right;
+    }
+  }
+
+  figure.testimonial {
+    margin: 0;
+    padding: 0;
+    clear: both;
+
+    &:before {
+      @include hanging-quote;
+      top: 42px;
+    }
+
+    > p {
+      width: 72%;
+      float: left;
+      margin: 0 20px 0 0;
+      padding: 0 20px 1.5em 0;
+      border-right: 1px solid #caccbd;
+      font-family: $serif-font;
+      font-style: italic;
+
+      &:nth-last-child(2) {
+        margin-bottom: 80px;
+        padding-bottom: 0;
+      }
+    }
+    > figcaption {
+      span {
+        color: mix-bg($fg-color, 0.6);
+      }
+    }
+  }
+}
+
+.sepa-before {
+  &:before {
+    @include sepa;
+  }
+  &.more-space {
+    &:before {
+      margin: 0.7em 0;
+    }
+  }
+  &.disclaimer, &.donation, &.contact {
+    &:before {
+      margin: 0.85em 0 0.45em 0;
+    }
+  }
+}
+
+.sepa-after {
+  &:after {
+    @include sepa;
+  }
+  &.more-space {
+    &:after {
+      margin: 0.8em 0;
+    }
+  }
+  &.more-space2 {
+    &:after {
+      margin: 1.8em 0 1.0em 0;
+    }
+  }
+}
+
+section.bottom-quote {
+  display: flex;
+  height: 260px;
+  clear: both;
+  align-items: center;
+
+  &.home             { background-image: url(../img/home-bottom.jpg); }
+  &.about            { background-image: url(../img/about-bottom.jpg); }
+  &.testimonials     { background-image: url(../img/testimonials-bottom.jpg); }
+  &.private-sessions { background-image: url(../img/private-sessions-bottom.jpg); }
+
+  blockquote {
+    width: 1200px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: $serif-font;
+    font-style: italic;
+    font-size: 32px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+footer {
+  padding: 30px 0;
+  background-color: #614c80;
+  user-select: none;
+
+  @include vn-logo;
+
+  h1 {
+    margin: 20px 140px 0 calc((100vw - #{$content-width}) / 2);
+    float: left;
+
+    > a {
+      font-size: 40px;
+
+      > span {
+        left: -27px;
+        top: 29px;
+      }
+    }
+  }
+
+  > nav {
+    width: $content-width;
+    margin: 0 auto;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 17px;
+      line-height: 35px;
+
+      > li {
+        display: block;
+
+        > a {
+          text-decoration: none;
+          color: #fff;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+
+      &.nav1 {
+        margin-right: 110px;
+        float: left;
+      }
+      &.nav2 {
+        margin-left: 590px;
+      }
+    }
+  }
+}
+
+div.abc {
+  margin-bottom: 2em;
+  text-align: center;
+
+  * {
+    box-sizing: border-box;
+  }
+  div.error {
+    font-size: 16px;
+    font-weight: bold;
+    background: #ffc8c4;
+    color: rgba(#800, 0.6);
+    border-radius: 5px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    text-align: left;
+  }
+
+  a {
+    border: none;
+    text-decoration: none;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  input, textarea, button {
+    display: block;
+    width: 100%;
+    margin: 15px 0 10px 0;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid mix-bg($fg-color, 0.25);
+    font-family: $body-font;
+    font-size: 18px;
+    background: mix-bg(#fff, 0.7);
+    color: $fg-color;
+  }
+
+  input, textarea {
+    &::placeholder {
+      opacity: 0.7;
+    }
+    &.error {
+      border: 2px solid #faa;
+    }
+  }
+
+  textarea {
+    height: 180px;
+  }
+
+  button {
+    $col: mix-bg($fg-color, 0.6);
+    background: $col;
+    border-color: $col;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.valid {
+      background: #8b4;
+      border-color: #8b4;
+    }
+  }
+}
+
+#contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(#000, 0.5);
+
+  > div {
+    $width: 300px;
+    $height: 130px;
+    $padding: 20px;
+
+    position: fixed;
+    top: calc((100vh - (#{$height} + 2 * #{$padding})) / 2);
+    left: calc((100vw - (#{$width} + 2 * #{$padding})) / 2);
+    width: $width;
+    height: $height;
+    padding: $padding;
+    background: $bg-color;
+    border-radius: 15px;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    > p {
+      margin: 0 0 1em 0;
+      text-align: center;
+    }
+    #close-modal {
+      display: block;
+      color: $bg-color;
+      background: mix-bg($fg-color, 0.8);
+      padding: 0 2em;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: mix-bg($fg-color, 0.65);
+      }
+    }
+  }
+}
+
+
+/* Spinner */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  left: 6px;
+  width: 19px;
+  height: 19px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  margin: 3px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -178,56 +178,82 @@ function validate() {
 
 /* Init */
 
-sendButton.addEventListener('click', () => {
-  if (!sending) {
-    sending = true
-    formFields.forEach(setValidateField)
-    let result = validate()
-    if (result.valid) {
-      sendButton.innerHTML = 'Sending message <div class="lds-ring"><div></div><div></div><div></div><div></div></div>'
-      sendMessage(getFormData())
+if (sendButton) {
+
+  sendButton.addEventListener('click', () => {
+    if (!sending) {
+      sending = true
+      formFields.forEach(setValidateField)
+      let result = validate()
+      if (result.valid) {
+        sendButton.innerHTML = 'Sending message <div class="lds-ring"><div></div><div></div><div></div><div></div></div>'
+        sendMessage(getFormData())
+      }
     }
-  }
-})
+  })
 
-formFields.forEach(el => {
-  el.addEventListener('input', debounce(() => {
-    setValidateField(el)
+  formFields.forEach(el => {
+    el.addEventListener('input', debounce(() => {
+      setValidateField(el)
+      validate()
+    }))
+  })
+
+  closeModalButton.addEventListener('click', () => {
+    closeModal()
+  })
+
+  formFields.forEach(el => {
+    if (el.value != '') setValidateField(el)
     validate()
-  }))
-})
+  })
 
-closeModalButton.addEventListener('click', () => {
-  closeModal()
-})
+  /**************************************************************************/
 
-formFields.forEach(el => {
-  if (el.value != '') setValidateField(el)
-  validate()
-})
+  const sections = document.querySelectorAll('h2');
 
+  const menus = [
+    document.querySelector('#private-sessions-menu'),
+    document.querySelector('#donation-menu'),
+    document.querySelector('#contact-menu'),
+    document.querySelector('#contact-menu')
+  ]
+
+  function onScroll() {
+    let y = window.scrollY
+    let i = sections.length
+
+    while (--i && y + 200 < sections[i].offsetTop) {}
+
+    menus.forEach(el => el.classList.remove('sel'))
+    menus[i].classList.add('sel')
+  }
+
+  window.addEventListener('scroll', onScroll)
+
+  onScroll()
+}
 
 /**************************************************************************/
 
-const sections = document.querySelectorAll('h2');
-const menus = [
-  document.querySelector('#private-sessions-menu'),
-  document.querySelector('#donation-menu'),
-  document.querySelector('#contact-menu'),
-  document.querySelector('#contact-menu')
-]
+const rellaxMinWidth = 1020
+var showParallax = false
 
-function onScroll() {
-  let y = window.scrollY
-  let i = sections.length
-
-  while (--i && y + 200 < sections[i].offsetTop) {}
-
-  menus.forEach(el => el.classList.remove('sel'))
-  menus[i].classList.add('sel')
+function handleRellax() {
+  if (document.documentElement.clientWidth >= rellaxMinWidth) {
+    document.querySelector('.top-image img.parallax').style.display = 'block'
+    document.querySelector('.top-image img.no-parallax').style.display = 'none'
+    console.log('on')
+  } else {
+    document.querySelector('.top-image img.parallax').style.display = 'none'
+    document.querySelector('.top-image img.no-parallax').style.display = 'block'
+    console.log('off')
+  }
 }
 
-window.addEventListener('scroll', onScroll)
+window.addEventListener('resize', handleRellax)
 
-onScroll()
+rellax = new Rellax('.top-image img.parallax')
+
+handleRellax()
 

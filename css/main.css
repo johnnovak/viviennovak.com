@@ -100,11 +100,11 @@ body {
 }
 
 header {
+  padding: 1em;
   background-color: #775c9b;
   border-bottom: 2px solid #ebeedc;
   z-index: 1;
   user-select: none;
-  padding: 1em;
 }
 header > div {
   position: relative;
@@ -162,7 +162,21 @@ section.top-image > img {
   z-index: -1;
 }
 section.top-image > div.text {
-  display: none;
+  display: block;
+  position: absolute;
+  top: calc(150px + 25vw);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+}
+section.top-image > div.text > h1 {
+  margin: 0;
+  font-family: "Alegreya Sans";
+  font-weight: 100;
+  font-size: 12vw;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 section.body {
@@ -172,22 +186,21 @@ section.body {
 }
 section.body .wrapper {
   margin: 0 auto;
-  padding-top: 40px;
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
 section.body h2, section.body h3 {
-  margin: 2.5em 0 1.5em 0;
+  margin: 2.5em 0 1.1em 0;
   font-family: "Noto Serif", sans-serif;
-  font-size: 32px;
+  font-size: 27px;
   font-weight: normal;
   font-style: italic;
   text-align: center;
   color: #6f6f6b;
 }
 section.body h3 {
-  margin: 3em 0 1em 0;
-  font-size: 26px;
+  margin: 2em 0 1em 0;
+  font-size: 22px;
   text-align: left;
   color: #8e8f87;
 }
@@ -204,7 +217,7 @@ section.body h3.sepa:before {
   color: #cccec0;
   content: "∫";
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.7em;
   content: "∫";
 }
 section.body p {
@@ -225,7 +238,7 @@ section.body a:hover {
 }
 section.body ul {
   margin: 0;
-  padding: 0 0 0 3rem;
+  padding: 0 0 0 2rem;
   list-style: none;
 }
 section.body ul li {
@@ -240,7 +253,7 @@ section.body ul li:before {
 }
 section.body blockquote {
   width: 75%;
-  margin: 0em auto 3em auto;
+  margin: 2em auto 3em auto;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
   font-size: 20px;
@@ -263,13 +276,13 @@ section.body blockquote:before {
 section.body img.left {
   position: relative;
   width: 37%;
-  margin: 0 15px 15px 0;
+  margin: 0 1.3rem 1.1rem 0;
   float: left;
 }
 section.body img.right {
   position: relative;
   width: 45%;
-  margin: 0 0 15px 20px;
+  margin: 0 0 1.3rem 1.1rem;
   float: right;
 }
 section.body figure.testimonial {
@@ -288,20 +301,21 @@ section.body figure.testimonial:before {
   line-height: 0;
   content: "“";
   color: #cccec0;
-  top: 42px;
+  top: 20px;
+  left: -20px;
 }
 section.body figure.testimonial > p {
-  width: 72%;
-  float: left;
-  margin: 0 20px 0 0;
-  padding: 0 20px 1.5em 0;
-  border-right: 1px solid #caccbd;
+  margin: 0 0 0 2.3em;
+  padding: 0 0 1em 0;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
 }
 section.body figure.testimonial > p:nth-last-child(2) {
-  margin-bottom: 80px;
-  padding-bottom: 0;
+  padding-bottom: 1em;
+}
+section.body figure.testimonial > figcaption {
+  margin-bottom: 3em;
+  text-align: right;
 }
 section.body figure.testimonial > figcaption span {
   color: #8e8f87;
@@ -344,7 +358,7 @@ section.body figure.testimonial > figcaption span {
   margin: 0.6em 0;
 }
 .sepa-after.more-space2:after {
-  margin: 1.8em 0 1em 0;
+  margin: 0.2em 0 0.8em 0;
 }
 
 section.bottom-quote {
@@ -376,15 +390,15 @@ section.bottom-quote blockquote {
 }
 
 footer {
-  padding: 30px 0;
+  padding: 20px 1.5em;
   background-color: #614c80;
   user-select: none;
 }
-footer > h1 {
+footer > div > h1 {
   margin: 0;
   text-align: center;
 }
-footer > h1 > a {
+footer > div > h1 > a {
   font-family: "Alegreya Sans";
   font-weight: 500;
   font-size: 35px;
@@ -392,40 +406,47 @@ footer > h1 > a {
   color: #fff;
   text-decoration: none;
 }
-footer > h1 > a > span {
+footer > div > h1 > a > span {
   font-weight: 100;
 }
-footer h1 {
-  margin-bottom: 1em;
+footer > div > h1 {
+  margin-bottom: 0.7em;
 }
-footer h1 > a {
-  font-size: 40px;
+footer > div > h1 > a {
+  font-size: 32px;
 }
-footer h1 > a > span {
+footer > div > h1 > a > span {
   left: -27px;
   top: 29px;
 }
-footer > nav {
+footer > div > nav {
   margin: 0 auto;
+  width: 20em;
 }
-footer > nav > ul {
+footer > div > nav > ul {
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 17px;
-  line-height: 35px;
-  text-align: center;
+  line-height: 30px;
 }
-footer > nav > ul > li {
+footer > div > nav > ul > li {
   display: block;
 }
-footer > nav > ul > li > a {
+footer > div > nav > ul > li > a {
   text-decoration: none;
   color: #fff;
 }
-footer > nav > ul > li > a:hover {
+footer > div > nav > ul > li > a:hover {
   opacity: 0.7;
 }
+footer > div > nav > ul.nav1 {
+  float: left;
+}
+footer > div > nav > ul.nav2 {
+  margin-left: 9em;
+}
+
 div.abc {
   margin-bottom: 2em;
   text-align: center;
@@ -458,11 +479,11 @@ div.abc input, div.abc textarea, div.abc button {
   display: block;
   width: 100%;
   margin: 15px 0 10px 0;
-  padding: 8px 14px;
+  padding: 6px 12px;
   border-radius: 5px;
   border: 2px solid #c4c6b9;
   font-family: "Noto Sans", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   background: #f9faf5;
   color: #504f4f;
 }
@@ -580,28 +601,273 @@ div.abc button.valid {
 /*--------------------------------------------------------------------------*/
 @media (min-width: 540px) {
   section.top-image > div.text {
-    display: block;
-    position: absolute;
     top: 300px;
     width: 100%;
-    text-align: center;
-    color: #fff;
-    user-select: none;
   }
   section.top-image > div.text > h1 {
-    margin: 0;
-    font-family: "Alegreya Sans";
-    font-weight: 100;
     font-size: 80px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
   }
 }
 /*--------------------------------------------------------------------------*/
+@media (min-width: 640px) {
+  footer {
+    padding: 20px 1.5em;
+    background-color: #614c80;
+    user-select: none;
+  }
+  footer > div {
+    width: 600px;
+    margin: 0 auto;
+  }
+  footer > div > h1 {
+    margin: 0;
+    text-align: center;
+  }
+  footer > div > h1 > a {
+    font-family: "Alegreya Sans";
+    font-weight: 500;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+  footer > div > h1 > a > span {
+    font-weight: 100;
+  }
+  footer > div > h1 {
+    margin: 20px 50px 0 10px;
+    float: left;
+  }
+  footer > div > h1 > a {
+    font-size: 40px;
+  }
+  footer > div > h1 > a > span {
+    position: relative;
+    top: 29px;
+    left: -27px;
+  }
+  footer > div > nav > ul {
+    line-height: 35px;
+  }
+  footer > div > nav > ul.nav1 {
+    margin-right: 0px;
+    float: left;
+  }
+  footer > div > nav > ul.nav2 {
+    width: 9em;
+    margin-left: 325px;
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 770px) {
+  html {
+    font: 18px/32px "Noto Sans", sans-serif;
+  }
+
+  header > div > nav > ul {
+    font-size: 19px;
+  }
+
+  section.body h2 {
+    font-size: 32px;
+  }
+  section.body h3 {
+    font-size: 26px;
+  }
+  section.body h3.sepa:before {
+    display: block;
+    clear: both;
+    width: 100%;
+    margin: 0.5em 0;
+    font-family: "Fertigo Pro";
+    font-size: 6rem;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    color: #cccec0;
+    content: "∫";
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  section.body img.left {
+    margin: 0 1.5rem 1.3rem 0;
+  }
+  section.body img.right {
+    margin: 0 0 1.5rem 1.3rem;
+  }
+
+  .sepa-before.more-space:before {
+    margin: 0.7em 0;
+  }
+
+  .sepa-after.more-space:after {
+    margin: 0.8em 0;
+  }
+  .sepa-after.more-space2:after {
+    margin: 0.8em 0 1em 0;
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 920px) {
+  section.body .wrapper {
+    width: 750px;
+  }
+
+  section.body .wrapper {
+    padding-top: 1px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section.body h2, section.body h3 {
+    margin: 2.5em 0 1.5em 0;
+  }
+  section.body h3 {
+    margin: 3em 0 1em 0;
+  }
+  section.body ul {
+    padding-left: 3rem;
+  }
+  section.body blockquote {
+    width: 90%;
+    font-size: 26px;
+    text-align: left;
+  }
+  section.body blockquote:before {
+    float: left;
+    position: relative;
+    top: 20px;
+    left: -50px;
+    font-family: "Noto Serif", sans-serif;
+    font-style: normal;
+    font-size: 120px;
+    line-height: 0;
+    content: "“";
+    color: #cccec0;
+  }
+  section.body figure.testimonial {
+    margin: 0;
+    padding: 0;
+    clear: both;
+  }
+  section.body figure.testimonial:before {
+    float: left;
+    position: relative;
+    top: 20px;
+    left: -50px;
+    font-family: "Noto Serif", sans-serif;
+    font-style: normal;
+    font-size: 120px;
+    line-height: 0;
+    content: "“";
+    color: #cccec0;
+    top: 20px;
+    left: -65px;
+  }
+  section.body figure.testimonial > p {
+    width: 72%;
+    float: left;
+    margin: 0 20px 0 0;
+    padding: 0 20px 1.5em 0;
+    border-right: 1px solid #caccbd;
+  }
+  section.body figure.testimonial > p:nth-last-child(2) {
+    margin-bottom: 80px;
+  }
+  section.body figure.testimonial > figcaption {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  footer > div {
+    width: 750px;
+  }
+  footer > div h1 {
+    margin-left: 40px;
+  }
+  footer > div > nav > ul.nav1 {
+    margin-left: 40px;
+  }
+  footer > div > nav > ul.nav2 {
+    margin-left: 340px;
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 1020px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 68px;
+    padding: 0;
+  }
+  header > div {
+    width: 1300px;
+  }
+  header > div > h1 > a > span {
+    position: relative;
+    top: 25px;
+    left: -24px;
+  }
+  header > div > h1 {
+    position: absolute;
+    top: 6px;
+    left: 20px;
+  }
+  header > div > nav > ul {
+    font-size: 20px;
+    margin-left: 0;
+    line-height: 1em;
+  }
+  header > div > nav > ul > li {
+    padding: 28px 16px 20px 16px;
+  }
+  header > div > nav > ul > li:not(:last-child):after {
+    padding: 0;
+    content: none;
+  }
+  header > div > nav > ul > li.sel {
+    background: #4b3a62;
+  }
+  header > div > nav > ul > li.sel > a {
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+  }
+
+  section.top-image > div.text {
+    top: 340px;
+  }
+  section.top-image > div.text > h1 {
+    font-size: 120px;
+  }
+
+  section.body .wrapper {
+    padding-top: 1px 0 0 0;
+  }
+  section.body img.left {
+    left: -90px;
+    margin: 0 -40px 20px 0;
+  }
+  section.body img.right {
+    left: 90px;
+    margin: 0 0 20px -50px;
+  }
+
+  section.bottom-quote {
+    display: flex;
+    height: 260px;
+  }
+  section.bottom-quote blockquote {
+    margin: 0 auto;
+    font-size: 32px;
+  }
+}
 /*--------------------------------------------------------------------------*/
 @media (min-width: 1400px) {
   body {
-    background: red !important;
+    background: green !important;
+  }
+
+  section.top-image > div.text {
+    top: 480px;
   }
 }
 
