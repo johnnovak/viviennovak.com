@@ -1,24 +1,32 @@
 /about/*
+  cache-control: public
   cache-control: max-age=3600
 
 /css/*
+  cache-control: public
   cache-control: max-age=3600
 
 /font/*
+  cache-control: public
   cache-control: max-age=604800
 
 /img/*
+  cache-control: public
   cache-control: max-age=604800
 
 /js/*
+  cache-control: public
   cache-control: max-age=3600
 
 /private-sessions/*
+  cache-control: public
   cache-control: max-age=3600
 
 /testimonials/*
+  cache-control: public
   cache-control: max-age=3600
 
 /index.html
+  cache-control: public
   cache-control: max-age=3600
 
