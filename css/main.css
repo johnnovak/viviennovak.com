@@ -635,16 +635,13 @@ div.abc button.valid {
     font-weight: 100;
   }
   footer > div > h1 {
-    margin: 20px 50px 0 10px;
+    margin: 22px 50px 0 10px;
     float: left;
-  }
-  footer > div > h1 > a {
-    font-size: 40px;
   }
   footer > div > h1 > a > span {
     position: relative;
-    top: 29px;
-    left: -27px;
+    top: 26px;
+    left: -24px;
   }
   footer > div > nav > ul {
     line-height: 35px;
@@ -799,9 +796,11 @@ div.abc button.valid {
     left: 0;
     height: 68px;
     padding: 0;
+    width: 100%;
   }
   header > div {
-    width: 1300px;
+    width: 1000px;
+    margin: 0 auto;
   }
   header > div > h1 > a > span {
     position: relative;
@@ -810,12 +809,12 @@ div.abc button.valid {
   }
   header > div > h1 {
     position: absolute;
-    top: 6px;
+    top: 4px;
     left: 20px;
   }
   header > div > nav > ul {
     font-size: 20px;
-    margin-left: 0;
+    margin-left: 260px;
     line-height: 1em;
   }
   header > div > nav > ul > li {
@@ -856,16 +855,18 @@ div.abc button.valid {
     height: 260px;
   }
   section.bottom-quote blockquote {
+    width: 1200px;
     margin: 0 auto;
     font-size: 32px;
   }
 }
 /*--------------------------------------------------------------------------*/
-@media (min-width: 1400px) {
-  body {
-    background: green !important;
+@media (min-width: 1300px) {
+  section.top-image > img {
+    width: 1300px;
+    min-height: 615px;
+    margin: 68px 0 0 calc(50vw - 650px);
   }
-
   section.top-image > div.text {
     top: 480px;
   }
