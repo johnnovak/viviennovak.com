@@ -253,7 +253,7 @@ section.body ul li:before {
 }
 section.body blockquote {
   width: 75%;
-  margin: 2em auto 3em auto;
+  margin: 1.2em auto 3em auto;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
   font-size: 20px;
@@ -262,10 +262,10 @@ section.body blockquote {
   text-align: center;
 }
 section.body blockquote:before {
-  float: left;
+  display: inline;
   position: relative;
-  top: 20px;
-  left: -50px;
+  top: 50px;
+  left: -8px;
   font-family: "Noto Serif", sans-serif;
   font-style: normal;
   font-size: 120px;
@@ -291,22 +291,23 @@ section.body figure.testimonial {
   clear: both;
 }
 section.body figure.testimonial:before {
-  float: left;
+  display: inline;
   position: relative;
-  top: 20px;
-  left: -50px;
+  top: 50px;
+  left: -8px;
   font-family: "Noto Serif", sans-serif;
   font-style: normal;
   font-size: 120px;
   line-height: 0;
   content: "“";
   color: #cccec0;
+  float: left;
   top: 20px;
   left: -20px;
 }
 section.body figure.testimonial > p {
   margin: 0 0 0 2.3em;
-  padding: 0 0 1em 0;
+  padding: 0 0 0.8em 0;
   font-family: "Noto Serif", sans-serif;
   font-style: italic;
 }
@@ -314,7 +315,7 @@ section.body figure.testimonial > p:nth-last-child(2) {
   padding-bottom: 1em;
 }
 section.body figure.testimonial > figcaption {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
   text-align: right;
 }
 section.body figure.testimonial > figcaption span {
@@ -421,7 +422,7 @@ footer > div > h1 > a > span {
 }
 footer > div > nav {
   margin: 0 auto;
-  width: 20em;
+  width: 18.5em;
 }
 footer > div > nav > ul {
   margin: 0;
@@ -597,15 +598,15 @@ div.abc button.valid {
   html {
     font: 17px/28px "Noto Sans", sans-serif;
   }
+
+  section.body blockquote {
+    font-size: 22px;
+  }
 }
 /*--------------------------------------------------------------------------*/
 @media (min-width: 540px) {
   section.top-image > div.text {
-    top: 300px;
     width: 100%;
-  }
-  section.top-image > div.text > h1 {
-    font-size: 80px;
   }
 }
 /*--------------------------------------------------------------------------*/
@@ -656,9 +657,9 @@ div.abc button.valid {
   }
 }
 /*--------------------------------------------------------------------------*/
-@media (min-width: 770px) {
+@media (min-width: 768px) {
   html {
-    font: 18px/32px "Noto Sans", sans-serif;
+    font: 18px/30px "Noto Sans", sans-serif;
   }
 
   header > div > nav > ul {
@@ -683,8 +684,25 @@ div.abc button.valid {
     text-align: center;
     color: #cccec0;
     content: "∫";
-    font-size: 2.5rem;
     margin-bottom: 2rem;
+  }
+  section.body blockquote {
+    font-size: 23px;
+  }
+  section.body blockquote:before {
+    display: inline;
+    position: relative;
+    top: 50px;
+    left: -8px;
+    font-family: "Noto Serif", sans-serif;
+    font-style: normal;
+    font-size: 120px;
+    line-height: 0;
+    content: "“";
+    color: #cccec0;
+    font-size: 182px;
+    left: -10px;
+    top: 75px;
   }
   section.body img.left {
     margin: 0 1.5rem 1.3rem 0;
@@ -693,24 +711,88 @@ div.abc button.valid {
     margin: 0 0 1.5rem 1.3rem;
   }
 
+  .sepa-before:before {
+    font-size: 8rem;
+  }
   .sepa-before.more-space:before {
     margin: 0.7em 0;
   }
 
+  .sepa-after:after {
+    font-size: 8rem;
+  }
   .sepa-after.more-space:after {
-    margin: 0.8em 0;
+    margin: 0.75em 0;
   }
   .sepa-after.more-space2:after {
-    margin: 0.8em 0 1em 0;
+    margin: 0.7em 0 0.8em 0;
+  }
+
+  div.abc input, div.abc textarea, div.abc button {
+    padding: 8px 14px;
+    font-size: 18px;
+  }
+
+  section.bottom-quote {
+    height: 220px;
+  }
+  section.bottom-quote blockquote {
+    margin: 0 auto;
+    font-size: 23px;
   }
 }
 /*--------------------------------------------------------------------------*/
 @media (min-width: 920px) {
-  section.body .wrapper {
-    width: 750px;
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 68px;
+    padding: 0;
+    width: 100%;
+  }
+  header > div {
+    margin: 0 0;
+  }
+  header > div > h1 > a > span {
+    position: relative;
+    top: 25px;
+    left: -24px;
+  }
+  header > div > h1 {
+    position: absolute;
+    top: 4px;
+    left: 20px;
+  }
+  header > div > nav > ul {
+    font-size: 19px;
+    line-height: 1em;
+    text-align: right;
+    margin-right: 20px;
+  }
+  header > div > nav > ul > li {
+    padding: 28px 14px 20px 14px;
+  }
+  header > div > nav > ul > li:not(:last-child):after {
+    padding: 0;
+    content: none;
+  }
+  header > div > nav > ul > li.sel {
+    background: #4b3a62;
+  }
+  header > div > nav > ul > li.sel > a {
+    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+  }
+
+  section.top-image > img {
+    margin-top: 68px;
+  }
+  section.top-image > div.text {
+    top: calc(42vw - 67px);
   }
 
   section.body .wrapper {
+    width: 750px;
     padding-top: 1px;
     padding-left: 0;
     padding-right: 0;
@@ -727,19 +809,21 @@ div.abc button.valid {
   section.body blockquote {
     width: 90%;
     font-size: 26px;
-    text-align: left;
   }
   section.body blockquote:before {
-    float: left;
+    display: inline;
     position: relative;
-    top: 20px;
-    left: -50px;
+    top: 50px;
+    left: -8px;
     font-family: "Noto Serif", sans-serif;
     font-style: normal;
     font-size: 120px;
     line-height: 0;
     content: "“";
     color: #cccec0;
+    font-size: 202px;
+    left: -10px;
+    top: 80px;
   }
   section.body figure.testimonial {
     margin: 0;
@@ -747,18 +831,19 @@ div.abc button.valid {
     clear: both;
   }
   section.body figure.testimonial:before {
-    float: left;
+    display: inline;
     position: relative;
-    top: 20px;
-    left: -50px;
+    top: 50px;
+    left: -8px;
     font-family: "Noto Serif", sans-serif;
     font-style: normal;
     font-size: 120px;
     line-height: 0;
     content: "“";
     color: #cccec0;
-    top: 20px;
-    left: -65px;
+    font-size: 165px;
+    top: 22px;
+    left: -80px;
   }
   section.body figure.testimonial > p {
     width: 72%;
@@ -768,24 +853,65 @@ div.abc button.valid {
     border-right: 1px solid #caccbd;
   }
   section.body figure.testimonial > p:nth-last-child(2) {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
   section.body figure.testimonial > figcaption {
     margin-bottom: 0;
     text-align: left;
   }
 
+  section.bottom-quote {
+    height: 260px;
+  }
+  section.bottom-quote blockquote {
+    font-size: 32px;
+  }
+
+  footer {
+    padding: 24px 1.5em;
+  }
   footer > div {
     width: 750px;
   }
-  footer > div h1 {
-    margin-left: 40px;
+  footer > div > h1 {
+    margin: 0;
+    text-align: center;
+  }
+  footer > div > h1 > a {
+    font-family: "Alegreya Sans";
+    font-weight: 500;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+  footer > div > h1 > a > span {
+    font-weight: 100;
+  }
+  footer > div > h1 {
+    margin-top: 20px;
+    margin-left: 8px;
+  }
+  footer > div > h1 > a {
+    font-size: 40px;
+  }
+  footer > div > h1 > a > span {
+    top: 29px;
+    left: -27px;
   }
   footer > div > nav > ul.nav1 {
-    margin-left: 40px;
+    margin-left: 140px;
   }
   footer > div > nav > ul.nav2 {
-    margin-left: 340px;
+    margin-left: 395px;
+  }
+}
+/*--------------------------------------------------------------------------*/
+@media (min-width: 970px) {
+  section.body figure.testimonial:before {
+    font-size: 202px;
+    top: 23px;
+    left: -100px;
   }
 }
 /*--------------------------------------------------------------------------*/
@@ -799,41 +925,18 @@ div.abc button.valid {
     width: 100%;
   }
   header > div {
-    width: 1000px;
-    margin: 0 auto;
-  }
-  header > div > h1 > a > span {
-    position: relative;
-    top: 25px;
-    left: -24px;
-  }
-  header > div > h1 {
-    position: absolute;
-    top: 4px;
-    left: 20px;
+    width: calc(1000px + 2vw);
   }
   header > div > nav > ul {
     font-size: 20px;
-    margin-left: 260px;
-    line-height: 1em;
+    margin-right: 0;
+    margin-left: 270px;
+    text-align: left;
   }
   header > div > nav > ul > li {
     padding: 28px 16px 20px 16px;
   }
-  header > div > nav > ul > li:not(:last-child):after {
-    padding: 0;
-    content: none;
-  }
-  header > div > nav > ul > li.sel {
-    background: #4b3a62;
-  }
-  header > div > nav > ul > li.sel > a {
-    border-bottom: 4px solid rgba(255, 255, 255, 0.5);
-  }
 
-  section.top-image > div.text {
-    top: 340px;
-  }
   section.top-image > div.text > h1 {
     font-size: 120px;
   }
@@ -849,19 +952,14 @@ div.abc button.valid {
     left: 90px;
     margin: 0 0 20px -50px;
   }
-
-  section.bottom-quote {
-    display: flex;
-    height: 260px;
-  }
-  section.bottom-quote blockquote {
-    width: 1200px;
-    margin: 0 auto;
-    font-size: 32px;
-  }
 }
 /*--------------------------------------------------------------------------*/
 @media (min-width: 1300px) {
+  header > div {
+    width: 1300px;
+    margin: 0 auto;
+  }
+
   section.top-image > img {
     width: 1300px;
     min-height: 615px;

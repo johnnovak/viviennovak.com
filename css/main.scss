@@ -31,9 +31,6 @@ $content-width: 750px;
       text-decoration: none;
 
       > span {
-//        position: relative;
-//        top: 25px;
-//        left: -24px;
         font-weight: 100;
       }
     }
@@ -56,18 +53,13 @@ $content-width: 750px;
 }
 
 @mixin hanging-quote {
-  float: left;
+  display: inline;
   position: relative;
-  top: 20px;
-
-  left: -50px;
-
-//  margin-left: -65px;
+  top: 50px;
+  left: -8px;
   font-family: $serif-font;
   font-style: normal;
-//  font-size: 206px;
   font-size: 120px;
-
   line-height: 0;
   content: '“';
   color: mix-bg($fg-color, 0.2);
@@ -243,7 +235,7 @@ section.body {
 
   blockquote {
     width: 75%;
-    margin: 2em auto 3em auto;
+    margin: 1.2em auto 3em auto;
     font-family: $serif-font;
     font-style: italic;
     font-size: 20px;
@@ -279,13 +271,14 @@ section.body {
 
     &:before {
       @include hanging-quote;
+      float: left;
       top: 20px;
       left: -20px;
     }
 
     > p {
       margin: 0 0 0 2.3em;
-      padding: 0 0 1.0em 0;
+      padding: 0 0 0.8em 0;
       font-family: $serif-font;
       font-style: italic;
 
@@ -297,7 +290,7 @@ section.body {
       span {
         color: mix-bg($fg-color, 0.6);
       }
-      margin-bottom: 3em;
+      margin-bottom: 2em;
       text-align: right;
     }
   }
@@ -309,7 +302,6 @@ section.body {
   }
   &.more-space {
     &:before {
-//      margin: 0.7em 0;
         margin: 0.5em 0;
     }
   }
@@ -338,7 +330,6 @@ section.body {
 
 section.bottom-quote {
   display: flex;
-//  height: 260px;
 
   clear: both;
   align-items: center;
@@ -349,15 +340,12 @@ section.bottom-quote {
   &.private-sessions { background-image: url(../img/private-sessions-bottom.jpg); }
 
   blockquote {
-//    width: 1200px;
     width: 80%;
-//    margin: 0 auto;
     margin: 1.5em auto;
 
     color: #fff;
     font-family: $serif-font;
     font-style: italic;
-//    font-size: 32px;
     font-size: 20px;
 
     line-height: 1.6em;
@@ -374,12 +362,9 @@ footer {
     @include vn-logo;
 
     > h1 {
-   //   margin: 20px 140px 0 calc((100vw - #{$content-width}) / 2);
-  //    float: left;
       margin-bottom: 0.7em;
 
       > a {
-  //      font-size: 40px;
         font-size: 32px;
 
         > span {
@@ -390,19 +375,15 @@ footer {
     }
 
     > nav {
-  //    width: $content-width;
       margin: 0 auto;
-      width: 20em;
+      width: 18.5em;
 
       > ul {
         margin: 0;
         padding: 0;
         list-style: none;
         font-size: 17px;
-  //      line-height: 35px;
         line-height: 30px;
-
-        //////
 
         > li {
           display: block;
@@ -418,11 +399,9 @@ footer {
         }
 
         &.nav1 {
-  //        margin-right: 110px;
           float: left;
         }
         &.nav2 {
-  //        margin-left: 590px;
           margin-left: 9em;
         }
       }
@@ -601,6 +580,11 @@ div.abc {
   html {
     font: 17px/28px $body-font;
   }
+  section.body {
+    blockquote {
+      font-size: 22px;
+    }
+  }
 }
 
 /*--------------------------------------------------------------------------*/
@@ -609,13 +593,9 @@ div.abc {
   section.top-image {
 
     > div.text {
-  //    top: 480px;
-      top: 300px;
       width: 100%;
 
       > h1 {
-  //      font-size: 120px;
-        font-size: 80px;
       }
     }
   }
@@ -635,15 +615,14 @@ div.abc {
       @include vn-logo;
 
       > h1 {
-        margin: 20px 50px 0 10px;
+        margin: 22px 50px 0 10px;
         float: left;
 
         > a {
-          font-size: 40px;
           > span {
             position: relative;
-            top: 29px;
-            left: -27px;
+            top: 26px;
+            left: -24px;
           }
         }
       }
@@ -667,9 +646,9 @@ div.abc {
 }
 
 /*--------------------------------------------------------------------------*/
-@media (min-width: 770px) {
+@media (min-width: 768px) {
   html {
-    font: 18px/32px $body-font;
+    font: 18px/30px $body-font;
   }
 
   header {
@@ -692,8 +671,18 @@ div.abc {
 
       &.sepa:before {
         @include sepa; // TODO
-        font-size: 2.5rem;
         margin-bottom: 2rem;
+      }
+    }
+
+    blockquote {
+      font-size: 23px;
+
+      &:before {
+        @include hanging-quote;
+        font-size: 182px;
+        left: -10px;
+        top: 75px;
       }
     }
 
@@ -709,6 +698,9 @@ div.abc {
   }
 
   .sepa-before {
+    &:before {
+      font-size: 8rem;
+    }
     &.more-space {
       &:before {
         margin: 0.7em 0;
@@ -717,122 +709,50 @@ div.abc {
   }
 
   .sepa-after {
+    &:after {
+      font-size: 8rem;
+    }
     &.more-space {
       &:after {
-        margin: 0.8em 0;
+        margin: 0.75em 0;
       }
     }
     &.more-space2 {
       &:after {
-        margin: 0.8em 0 1.0em 0;
+        margin: 0.7em 0 0.8em 0;
       }
+    }
+  }
+
+  div.abc {
+    input, textarea, button {
+      padding: 8px 14px;
+      font-size: 18px;
+    }
+  }
+
+  section.bottom-quote {
+    height: 220px;
+
+    blockquote {
+      margin: 0 auto;
+      font-size: 23px;
     }
   }
 }
 
 /*--------------------------------------------------------------------------*/
 @media (min-width: 920px) {
-  section.body {
-    .wrapper {
-      width: $content-width;
-    }
-  }
-
-  section.body {
-    .wrapper {
-      padding-top: 1px; // TODO?
-
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    h2, h3 {
-      margin: 2.5em 0 1.5em 0;
-    }
-
-    h3 {
-      margin: 3em 0 1em 0;
-    }
-
-    ul {
-      padding-left: 3rem;
-    }
-
-    blockquote {
-      width: 90%;
-      font-size: 26px;
-      text-align: left;
-
-      &:before {
-        @include hanging-quote; // TODO?
-      }
-    }
-
-    figure.testimonial {
-      margin: 0;
-      padding: 0;
-      clear: both;
-
-      &:before {
-        @include hanging-quote; // TODO?
-        top: 20px;
-        left: -65px;
-      }
-
-      > p {
-        width: 72%;
-        float: left;
-        margin: 0 20px 0 0;
-        padding: 0 20px 1.5em 0;
-        border-right: 1px solid #caccbd;
-
-        &:nth-last-child(2) {
-          margin-bottom: 80px;
-        }
-      }
-
-      > figcaption {
-        margin-bottom: 0;
-        text-align: left;
-      }
-    }
-  }
-
-  footer {
-    > div {
-      width: $content-width;
-
-      h1 {
-        margin-left: 40px;
-      }
-
-      > nav {
-        > ul {
-          &.nav1 {
-            margin-left: 40px;
-          }
-          &.nav2 {
-            margin-left: 340px;
-          }
-        }
-      }
-    }
-  }
-}
-
-/*--------------------------------------------------------------------------*/
-// min content width
-@media (min-width: 1020px) {
-
   header {
     position: fixed;
     top: 0;
     left: 0;
     height: 68px;
     padding: 0;
+    width: 100%;
 
     > div {
-      width: 1300px; // TODO
+      margin: 0 0;
 
       > h1 > a > span {
         position: relative;
@@ -842,19 +762,19 @@ div.abc {
 
       > h1 {
         position: absolute;
-        top: 6px;
+        top: 4px;
         left: 20px;
       }
 
       > nav {
         > ul {
-          font-size: 20px;
-//          margin-left: 205px; // TODO
-          margin-left: 0;
+          font-size: 19px;
           line-height: 1em;
+          text-align: right;
+          margin-right: 20px;
 
           > li {
-            padding: 28px 16px 20px 16px;
+            padding: 28px 14px 20px 14px;
 
             &:not(:last-child):after {
               padding: 0;
@@ -874,9 +794,166 @@ div.abc {
   }
 
   section.top-image {
+    > img {
+      margin-top: 68px;
+    }
     > div.text {
-      top: 340px;
+      top: calc(42vw - 67px);
+    }
+  }
 
+  section.body {
+    .wrapper {
+      width: $content-width;
+      padding-top: 1px; // TODO?
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    h2, h3 {
+      margin: 2.5em 0 1.5em 0;
+    }
+
+    h3 {
+      margin: 3em 0 1em 0;
+    }
+
+    ul {
+      padding-left: 3rem;
+    }
+
+    blockquote {
+      width: 90%;
+      font-size: 26px;
+
+      &:before {
+        @include hanging-quote;
+        font-size: 202px;
+        left: -10px;
+        top: 80px;
+      }
+    }
+
+    figure.testimonial {
+      margin: 0;
+      padding: 0;
+      clear: both;
+
+      &:before {
+        @include hanging-quote;
+        font-size: 165px;
+        top: 22px;
+        left: -80px;
+      }
+
+      > p {
+        width: 72%;
+        float: left;
+        margin: 0 20px 0 0;
+        padding: 0 20px 1.5em 0;
+        border-right: 1px solid #caccbd;
+
+        &:nth-last-child(2) {
+          margin-bottom: 70px;
+        }
+      }
+
+      > figcaption {
+        margin-bottom: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  section.bottom-quote {
+    height: 260px;
+
+    blockquote {
+      font-size: 32px;
+    }
+  }
+
+  footer {
+    padding: 24px 1.5em;
+
+    > div {
+      width: $content-width;
+
+      @include vn-logo;
+
+      > h1 {
+        margin-top: 20px;
+        margin-left: 8px;
+
+        > a {
+          font-size: 40px;
+
+          > span {
+            top: 29px;
+            left: -27px;
+          }
+        }
+      }
+
+      > nav {
+        > ul {
+          &.nav1 {
+            margin-left: 140px;
+          }
+          &.nav2 {
+            margin-left: 395px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+@media (min-width: 970px) {
+  section.body {
+    figure.testimonial {
+      &:before {
+        font-size: 202px;
+        top: 23px;
+        left: -100px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------*/
+// min content width
+@media (min-width: 1020px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 68px;
+    padding: 0;
+    width: 100%;
+
+    > div {
+      width: calc(1000px + 2vw);
+
+      > nav {
+        > ul {
+          font-size: 20px;
+          margin-right: 0;
+          margin-left: 270px;
+          text-align: left;
+
+          > li {
+            padding: 28px 16px 20px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  section.top-image {
+    > div.text {
       > h1 {
         font-size: 120px;
       }
@@ -900,27 +977,25 @@ div.abc {
       }
     }
   }
-
-  section.bottom-quote {
-    display: flex;
-    height: 260px;
-
-    blockquote {
-  //    width: 1200px;
-      margin: 0 auto;
-      font-size: 32px;
-    }
-  }
 }
 
 /*--------------------------------------------------------------------------*/
-// full width
-@media (min-width: 1400px) {
-  body {
-    background: green !important;
+@media (min-width: 1300px) {
+
+  header {
+    > div {
+      width: 1300px;
+      margin: 0 auto;
+    }
   }
 
   section.top-image {
+    > img {
+      width: 1300px;
+      min-height: 615px;
+      margin: 68px 0 0 calc(50vw - 650px);
+    }
+
     > div.text {
       top: 480px;
     }
