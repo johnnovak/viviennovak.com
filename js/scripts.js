@@ -1,27 +1,31 @@
 const fieldNames = ['name', 'email', 'message'];
+
+const inputElements = {
+  'name':    document.querySelector('#phone-input'),
+  'email':   document.querySelector('#country-input'),
+  'message': document.querySelector('#comments-input')
+}
+const errorElements = {
+  'name':    document.querySelector('#phone-error'),
+  'email':   document.querySelector('#country-error'),
+  'message': document.querySelector('#comments-error')
+}
+
 const validateAttr = 'data-validate';
 const validClass = 'valid';
 const debounceDelayMs = 1000;
 
 const body = document.querySelector('body');
-const sendButton = document.querySelector('button');
+const sendButton = document.querySelector('#submit');
 const contactModal = document.getElementById('contact-modal');
 const contactModalMsg = document.querySelector('#contact-modal > div > p');
 const closeModalButton = document.getElementById('close-modal');
 const postUrl = 'https://cxs5fa9xtc.execute-api.us-east-2.amazonaws.com/default/mailfwd';
 
-const formFields = fieldNames.map(inputElement)
+const formFields = fieldNames.map(n => inputElements[n])
 
 let sending = false;
 
-
-function inputElement(name) {
-  return document.getElementById(`${name}-input`)
-}
-
-function errorElement(name) {
-  return document.getElementById(`${name}-error`)
-}
 
 function isValidateField(el) {
   return el.getAttribute(validateAttr) == '1'
@@ -34,7 +38,7 @@ function setValidateField(el) {
 function getFormData() {
   let data = {}
   fieldNames.forEach(name => {
-    let el = inputElement(name)
+    let el = inputElements[name]
     data[name] = {
       text: el.value,
       validate: isValidateField(el)
@@ -104,13 +108,13 @@ function validateFormData(data) {
 }
 
 function updateValidationErrors(result) {
-  Object.entries(result.errors).forEach( ([field, msg]) => {
-    let el = errorElement(field)
+  Object.entries(result.errors).forEach( ([fieldName, msg]) => {
+    let el = errorElements[fieldName]
     const errorClass = 'error'
     el.style.display = (msg == '' ? 'none' : 'block')
     el.innerText = msg
 
-    el = inputElement(field)
+    el = inputElements[fieldName]
     if (msg == '') {
       el.classList.remove(errorClass)
     } else {
@@ -180,6 +184,10 @@ function validate() {
 
 if (sendButton) {
 
+  inputElements['name'].setAttribute('placeholder', 'Your name')
+  inputElements['email'].setAttribute('placeholder', 'Your email')
+  inputElements['message'].setAttribute('placeholder', 'Your message')
+
   sendButton.addEventListener('click', () => {
     if (!sending) {
       sending = true
@@ -243,11 +251,9 @@ function handleRellax() {
   if (document.documentElement.clientWidth >= rellaxMinWidth) {
     document.querySelector('.top-image img.parallax').style.display = 'block'
     document.querySelector('.top-image img.no-parallax').style.display = 'none'
-    console.log('on')
   } else {
     document.querySelector('.top-image img.parallax').style.display = 'none'
     document.querySelector('.top-image img.no-parallax').style.display = 'block'
-    console.log('off')
   }
 }
 

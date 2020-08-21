@@ -13,25 +13,6 @@
   font-style: italic;
   font-display: swap;
 }
-/*
-@font-face {
-    font-family: 'Noto Serif';
-    src: url('../font/subset-NotoSerif-Bold.woff2') format('woff2'),
-         url('../font/subset-NotoSerif-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noto Serif';
-    src: url('../font/subset-NotoSerif-BoldItalic.woff2') format('woff2'),
-         url('../font/subset-NotoSerif-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-*/
 /* Noto Sans */
 @font-face {
   font-family: "Noto Sans";
@@ -54,16 +35,6 @@
   font-style: normal;
   font-display: swap;
 }
-/*
-@font-face {
-    font-family: 'Noto Sans';
-    src: url('../font/subset-NotoSans-BoldItalic.woff2') format('woff2'),
-         url('../font/subset-NotoSans-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-*/
 /* Alegreya Sans */
 @font-face {
   font-family: "Alegreya Sans";
@@ -79,13 +50,13 @@
   font-style: normal;
   font-display: swap;
 }
-/* Fertigo Pro */
+/* Icons */
 @font-face {
-  font-family: "Fertigo Pro";
-  src: url("../font/subset-FertigoPro-Regular.woff2") format("woff2"), url("../font/subset-FertigoPro-Regular.woff") format("woff");
+  font-family: "Icons";
+  src: url("../font/Icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 /*# sourceMappingURL=fonts.css.map */

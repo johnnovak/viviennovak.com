@@ -8,6 +8,11 @@
   <meta name="description" content="Vivien Novak -- Guide">
 
   <link href="../css/main.css" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -28,7 +33,7 @@
 
   <section class="top-image">
     <img class="parallax" src="../img/private-sessions-top.jpg" alt="" data-rellax-speed="-3">
-    <img class="no-parallax"src="../img/private-sessions-top.jpg" style="display: none" alt="">
+    <img class="no-parallax" src="../img/private-sessions-top.jpg" style="display: none" alt="">
 
     <div class="text">
       <h1>Vivien Novak</h1>
@@ -92,6 +97,10 @@
           seeing things clearly in this moment as they actually are</li>
       </ul>
 
+      <p>If you would like to have several sessions at certain intervals, then
+      I can give you exercises and pointers &mdash; based on our conversation
+      &mdash; to investigate on your own between sessions.</p>
+
       <p>If you would like to have a taste of the inquiry into the self, please read
       the <a href="/">home page</a>.</p>
 
@@ -114,7 +123,7 @@
 
         <li>You are on the path of awakening, but you have some addictions
           &mdash; like cigarette, food, spending too much time on social media
-          &mdash; that you would like to finally let go of them</li>
+          &mdash; that you would like to finally let go of</li>
 
         <li>You would like to decondition and unlearn old patterns of feeling
           that don’t serve you anymore</li>
@@ -176,13 +185,8 @@
 
       <h2 id="donation" class="donation sepa-before">Donation</h2>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Vestibulum
-      maximus rutrum sagittis. Nulla tempor, purus et porta ultricies, arcu
-      nisl mollis purus, eu tempus augue mauris at massa. Nam nec condimentum
-      nisi, in posuere ligula. Aenean at pellentesque lectus, quis viverra
-      justo. Curabitur vel arcu ut lacus maximus malesuada semper et magna. In
-      aliquet, dolor fringilla varius viverra, est nisl euismod enim, non
-      iaculis elit libero at quam.</p>
+      <p>If you would like to support my work, then you can donate below
+      through Paypal.</p>
 
 
       <h2 id="contact" class="contact sepa-before">Contact</h2>
@@ -191,22 +195,33 @@
       reason, please fill out this contact form and I will be in touch with
       you.</p>
 
-      <p>It is important for you to read the <a href="#private-sessions">Private
-        sessions</a> section and the <a href="#disclaimer">Disclaimer</a>
+      <p>It is important for you to read the <a href="#disclaimer">Disclaimer</a>
       before booking a session.</p>
 
-      <div class="abc">
-        <input type="text" id="name-input" name="name" placeholder="Your name">
-        <div class="error" id="name-error"></div>
-
-        <input type="text" id="email-input" name="email" placeholder="Your email">
+      <form method="POST" action="?submit-form">
+        <input type="text" id="email-input" name="email">
         <div class="error" id="email-error"></div>
 
-        <textarea id="message-input" name="message-input" placeholder="Your message"></textarea>
+        <input type="text" id="name-input" name="name">
+        <div class="error" id="name-error"></div>
+
+        <input type="text" id="phone-input" name="phone">
+        <div class="error" id="phone-error"></div>
+
+        <input type="text" id="subject-input" name="subject">
+        <div class="error" id="subject-error"></div>
+
+        <input type="text" id="country-input" name="country">
+        <div class="error" id="country-error"></div>
+
+        <textarea id="comments-input" name="comments"></textarea>
+        <div class="error" id="comments-error"></div>
+
+        <textarea id="message-input" name="message"></textarea>
         <div class="error" id="message-error"></div>
 
-        <button type="submit">Contact Me</button>
-      </div>
+        <div id="submit">Contact Me</div>
+      </form>
 
       <div id="contact-modal" style="display: none">
         <div>
@@ -220,8 +235,8 @@
 
       <p><em>Having a private session and doing any form of inquiry with me
         does not involve the diagnosis or treatment of any mental disorder or
-        medical disease; and does not prevent, cure or treat any mental
-        disorder or medical disease. Further, any information provided by me
+        medical disease; and does not prevent, cure or treat any mental or
+        medical disease or disorder. Further, any information provided by me
         or through this website is not substitute for therapy, counselling,
         psychoanalysis, substance abuse treatment, psychiatric or medical
         treatment, or the advice or services of a medical professional.</em></p>
@@ -263,7 +278,7 @@
 
   <script src="../js/rellax.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=Object.fromEntries%2CObject.entries"></script>
-  <script src="../js/scripts.js"></script>
+  <script src="../js/scripts-es2015.js"></script>
 
 </body>
 

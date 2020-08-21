@@ -3,7 +3,7 @@
 
 $body-font:      'Noto Sans', sans-serif;
 $serif-font:     'Noto Serif', sans-serif;
-$ornaments-font: 'Fertigo Pro';
+$ornaments-font: 'Icons';
 
 $bg-color:     #ebeedc;
 $fg-color:     #504f4f;
@@ -41,7 +41,7 @@ $content-width: 750px;
   display: block;
   clear: both;
   width: 100%;
-  margin: 0.5em 0;
+  margin: 0.7em 0;
   font-family: $ornaments-font;
   font-size: 6rem;
 
@@ -49,7 +49,7 @@ $content-width: 750px;
   font-style: normal;
   text-align: center;
   color: mix-bg($fg-color, 0.2);
-  content: '\222b';
+  content: '\e900';
 }
 
 @mixin hanging-quote {
@@ -108,7 +108,7 @@ header {
 
           &:not(:last-child):after {
             font-family: $ornaments-font;
-            content: '\03a9';
+            content: '\e901';
             color: #fff;
             padding: 0 0.4em;
             opacity: 0.4;
@@ -191,7 +191,7 @@ section.body {
       @include sepa;
       font-size: 2.5rem;
       margin-bottom: 0.7em;
-      content: '\222b';
+      content: '\e900';
     }
   }
 
@@ -228,7 +228,7 @@ section.body {
         padding-right: 0.8rem;
         font-family: $ornaments-font;
         color: mix-bg($fg-color, 0.5);
-        content: '\03a9';
+        content: '\e901';
       }
     }
   }
@@ -302,12 +302,12 @@ section.body {
   }
   &.more-space {
     &:before {
-        margin: 0.5em 0;
+      margin: 0.5em 0;
     }
   }
   &.disclaimer, &.donation, &.contact {
     &:before {
-      margin: 0.85em 0 0.45em 0;
+      margin: 0.85em 0 0.6em 0;
     }
   }
 }
@@ -318,12 +318,12 @@ section.body {
   }
   &.more-space {
     &:after {
-      margin: 0.6em 0;
+      margin: 0.9em 0;
     }
   }
   &.more-space2 {
     &:after {
-      margin: 0.2em 0 0.8em 0;
+      margin: 0.6em 0 0.9em 0;
     }
   }
 }
@@ -409,7 +409,7 @@ footer {
   }
 }
 
-div.abc {
+form {
   margin-bottom: 2em;
   text-align: center;
 
@@ -436,11 +436,11 @@ div.abc {
   input:focus,
   select:focus,
   textarea:focus,
-  button:focus {
+  #submit:focus {
     outline: none;
   }
 
-  input, textarea, button {
+  input, textarea, #submit {
     display: block;
     width: 100%;
     margin: 15px 0 10px 0;
@@ -470,7 +470,7 @@ div.abc {
     height: 180px;
   }
 
-  button {
+  #submit {
     $col: mix-bg($fg-color, 0.6);
     background: $col;
     border-color: $col;
@@ -530,6 +530,16 @@ div.abc {
         background: mix-bg($fg-color, 0.65);
       }
     }
+  }
+}
+
+/* Anti-spam */
+form {
+  #email-input,   #email-error,
+  #name-input,    #name-error,
+  #subject-input, #subject-error,
+  #message-input, #message-error {
+    display: none;
   }
 }
 
@@ -643,6 +653,14 @@ div.abc {
       }
     }
   }
+
+  .sepa-before {
+    &.disclaimer, &.donation, &.contact {
+      &:before {
+        margin: 1.1em 0 0.6em 0;
+      }
+    }
+  }
 }
 
 /*--------------------------------------------------------------------------*/
@@ -670,7 +688,6 @@ div.abc {
       font-size: 26px;
 
       &.sepa:before {
-        @include sepa; // TODO
         margin-bottom: 2rem;
       }
     }
@@ -714,18 +731,18 @@ div.abc {
     }
     &.more-space {
       &:after {
-        margin: 0.75em 0;
+        margin: 1.0em 0;
       }
     }
     &.more-space2 {
       &:after {
-        margin: 0.7em 0 0.8em 0;
+        margin: 0.8em 0 1em 0;
       }
     }
   }
 
-  div.abc {
-    input, textarea, button {
+  form {
+    input, textarea, #submit {
       padding: 8px 14px;
       font-size: 18px;
     }
@@ -805,7 +822,7 @@ div.abc {
   section.body {
     .wrapper {
       width: $content-width;
-      padding-top: 1px; // TODO?
+      padding-top: 1px;
       padding-left: 0;
       padding-right: 0;
     }
