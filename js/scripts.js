@@ -18,7 +18,7 @@ const debounceDelayMs = 1000;
 const body = document.querySelector('body');
 const sendButton = document.querySelector('#submit');
 const contactModal = document.getElementById('contact-modal');
-const contactModalMsg = document.querySelector('#contact-modal > div > p');
+const contactModalMsg = document.querySelector('#contact-modal > div > div');
 const closeModalButton = document.getElementById('close-modal');
 const postUrl = 'https://cxs5fa9xtc.execute-api.us-east-2.amazonaws.com/default/mailfwd';
 
@@ -136,7 +136,7 @@ function resetForm() {
 
 function showModal(msg) {
   body.style.overflow = 'hidden';
-  contactModal.style.display = 'block';
+  contactModal.style.display = 'flex';
   contactModalMsg.innerHTML = msg
 }
 
@@ -150,12 +150,12 @@ function sendMessage(data) {
 
   xhr.addEventListener('load', () => {
     resetForm()
-    showModal('Your message has been sent.')
+    showModal('<p class="success-icon">&#xea10;</p><p>Your message has been sent.</p>')
   })
 
   xhr.addEventListener('error', () => {
     resetForm()
-    showModal('Your message could not be sent.<br>Please try again later.')
+    showModal('<p class="error-icon">&#xea0f;</p><p>Your message could not be sent.<br>Please try again later.</p>')
   })
 
   let postData = Object.fromEntries(

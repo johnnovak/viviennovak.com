@@ -198,6 +198,9 @@ section.body p:last-child {
   margin-bottom: 0;
   padding-bottom: 1em;
 }
+section.body p.back-to-top {
+  text-align: center;
+}
 section.body a {
   color: #888;
   text-decoration: none;
@@ -479,6 +482,18 @@ form #submit.valid {
   background: #8b4;
   border-color: #8b4;
 }
+form.paypal {
+  width: 96px;
+  margin: 0 auto;
+  padding: 0;
+}
+form.paypal input {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  border: none;
+  background: none;
+}
 
 #contact-modal {
   position: fixed;
@@ -489,13 +504,11 @@ form #submit.valid {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
 }
 #contact-modal > div {
-  position: fixed;
-  top: calc((100vh - (130px + 2 * 20px)) / 2);
-  left: calc((100vw - (300px + 2 * 20px)) / 2);
   width: 300px;
-  height: 130px;
   padding: 20px;
   background: #ebeedc;
   border-radius: 15px;
@@ -505,9 +518,20 @@ form #submit.valid {
   justify-content: center;
   flex-direction: column;
 }
-#contact-modal > div > p {
-  margin: 0 0 1em 0;
+#contact-modal > div p {
+  margin: 0 0 0.5em 0;
   text-align: center;
+}
+#contact-modal > div p.success-icon, #contact-modal > div p.error-icon {
+  margin: 0 0 10px 0;
+  font-family: "Icons";
+  font-size: 40px;
+}
+#contact-modal > div p.success-icon {
+  color: #5a4;
+}
+#contact-modal > div p.error-icon {
+  color: #c44;
 }
 #contact-modal > div #close-modal {
   display: block;
@@ -876,6 +900,10 @@ form #message-input, form #message-error {
   }
   footer > div > nav > ul.nav2 {
     margin-left: 395px;
+  }
+
+  .sepa-after.more-space2:after {
+    margin-top: 1.8em;
   }
 }
 /*--------------------------------------------------------------------------*/

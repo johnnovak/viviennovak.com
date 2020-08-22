@@ -202,6 +202,10 @@ section.body {
       margin-bottom: 0;
       padding-bottom: 1em;
     }
+
+    &.back-to-top {
+      text-align: center;
+    }
   }
 
   a {
@@ -483,6 +487,20 @@ form {
       border-color: #8b4;
     }
   }
+
+  &.paypal {
+    width: 96px;
+    margin: 0 auto;
+    padding: 0;
+
+    input {
+      margin: 0;
+      padding: 0;
+      width: auto;
+      border: none;
+      background: none;
+    }
+  }
 }
 
 #contact-modal {
@@ -494,17 +512,14 @@ form {
   width: 100%;
   height: 100%;
   background: rgba(#000, 0.5);
+  align-items: center;
+  justify-content: center;
 
   > div {
     $width: 300px;
-    $height: 130px;
     $padding: 20px;
 
-    position: fixed;
-    top: calc((100vh - (#{$height} + 2 * #{$padding})) / 2);
-    left: calc((100vw - (#{$width} + 2 * #{$padding})) / 2);
     width: $width;
-    height: $height;
     padding: $padding;
     background: $bg-color;
     border-radius: 15px;
@@ -514,9 +529,21 @@ form {
     justify-content: center;
     flex-direction: column;
 
-    > p {
-      margin: 0 0 1em 0;
+    p {
+      margin: 0 0 0.5em 0;
       text-align: center;
+
+      &.success-icon, &.error-icon {
+        margin: 0 0 10px 0;
+        font-family: $ornaments-font;
+        font-size: 40px;
+      }
+      &.success-icon {
+        color: #5a4;
+      }
+      &.error-icon {
+        color: #c44;
+      }
     }
     #close-modal {
       display: block;
@@ -921,6 +948,14 @@ form {
             margin-left: 395px;
           }
         }
+      }
+    }
+  }
+
+  .sepa-after {
+    &.more-space2 {
+      &:after {
+        margin-top: 1.8em;
       }
     }
   }
