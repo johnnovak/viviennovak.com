@@ -468,6 +468,43 @@ form input::placeholder, form textarea::placeholder {
 form input.error, form textarea.error {
   border: 2px solid #faa;
 }
+form .checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+form .checkbox > span {
+  color: #34495E;
+  padding: 0.8rem 0.7rem;
+}
+form .checkbox > input {
+  height: 30px;
+  width: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  border: 2px solid #c4c6b9;
+  outline: none;
+  background: #f5f7ee;
+  cursor: pointer;
+}
+form .checkbox > input:checked + span::before {
+  content: "✓";
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  color: #41B883;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+}
+form .checkbox > input:active {
+  border: 2px solid #8e8f87;
+}
 form textarea {
   height: 180px;
 }
@@ -477,6 +514,7 @@ form #submit {
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
+  user-select: none;
 }
 form #submit.valid {
   background: #8b4;
@@ -540,6 +578,7 @@ form.paypal input {
   padding: 0 2em;
   border-radius: 8px;
   cursor: pointer;
+  user-select: none;
 }
 #contact-modal > div #close-modal:hover {
   background: #868780;

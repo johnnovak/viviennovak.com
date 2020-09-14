@@ -1,14 +1,16 @@
-const fieldNames = ['name', 'email', 'message'];
+const fieldNames = ['name', 'email', 'message', 'checkbox'];
 
 const inputElements = {
-  'name':    document.querySelector('#phone-input'),
-  'email':   document.querySelector('#country-input'),
-  'message': document.querySelector('#comments-input')
+  'name':     document.querySelector('#phone-input'),
+  'email':    document.querySelector('#country-input'),
+  'message':  document.querySelector('#comments-input'),
+  'checkbox': document.querySelector('#checkbox-input')
 }
 const errorElements = {
-  'name':    document.querySelector('#phone-error'),
-  'email':   document.querySelector('#country-error'),
-  'message': document.querySelector('#comments-error')
+  'name':     document.querySelector('#phone-error'),
+  'email':    document.querySelector('#country-error'),
+  'message':  document.querySelector('#comments-error'),
+  'checkbox': document.querySelector('#checkbox-error')
 }
 
 const validateAttr = 'data-validate';
@@ -35,12 +37,20 @@ function setValidateField(el) {
   el.setAttribute(validateAttr, '1')
 }
 
+function getInputValue(el) {
+  if (el.type == 'checkbox') {
+    return el.checked ? '1' : ''
+  } else {
+    return el.value
+  }
+}
+
 function getFormData() {
   let data = {}
   fieldNames.forEach(name => {
     let el = inputElements[name]
     data[name] = {
-      text: el.value,
+      text: getInputValue(el),
       validate: isValidateField(el)
     }
   })
@@ -102,7 +112,14 @@ function validateFormData(data) {
     }
   }
 
-  result.allFieldsValidated = numFieldsValidated == 3
+  if (data.checkbox.validate) {
+    numFieldsValidated++;
+    if (data.checkbox.text == '') {
+      setError('checkbox', 'Please confirm that you have read and accept the disclaimer')
+    }
+  }
+
+  result.allFieldsValidated = numFieldsValidated == 4
 
   return result
 }
@@ -128,7 +145,11 @@ function resetForm() {
   sendButton.classList.remove(validClass)
 
   formFields.forEach(el => {
-    el.value = ''
+    if (el.type == 'checkbox') {
+      el.checked = false
+    } else {
+      el.value = ''
+    }
     el.removeAttribute(validateAttr)
   })
   sending = false
@@ -190,10 +211,10 @@ if (sendButton) {
 
   sendButton.addEventListener('click', () => {
     if (!sending) {
-      sending = true
       formFields.forEach(setValidateField)
       let result = validate()
       if (result.valid) {
+        sending = true
         sendButton.innerHTML = 'Sending message <div class="lds-ring"><div></div><div></div><div></div><div></div></div>'
         sendMessage(getFormData())
       }
@@ -212,7 +233,7 @@ if (sendButton) {
   })
 
   formFields.forEach(el => {
-    if (el.value != '') setValidateField(el)
+    if (getInputValue(el) != '') setValidateField(el)
     validate()
   })
 
