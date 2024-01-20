@@ -12,7 +12,7 @@ $content-width: 750px;
 
 
 @function mix-bg($col, $weight) {
-  @return mix($col, $bg-color, $weight*100)
+  @return mix($col, $bg-color, $weight * 100%)
 }
 
 
@@ -533,14 +533,13 @@ form {
   }
 
   &.paypal {
-    width: 96px;
+    width: 200px;
     margin: 0 auto;
     padding: 0;
 
     input {
       margin: 0;
       padding: 0;
-      width: auto;
       border: none;
       background: none;
     }

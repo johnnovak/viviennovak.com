@@ -112,7 +112,7 @@ header > div > nav > ul > li {
 }
 header > div > nav > ul > li:not(:last-child):after {
   font-family: "Icons";
-  content: "";
+  content: "\e901";
   color: #fff;
   padding: 0 0.4em;
   opacity: 0.4;
@@ -186,10 +186,10 @@ section.body h3.sepa:before {
   font-style: normal;
   text-align: center;
   color: #cccec0;
-  content: "";
+  content: "\e900";
   font-size: 2.5rem;
   margin-bottom: 0.7em;
-  content: "";
+  content: "\e900";
 }
 section.body p {
   margin-bottom: 1.3em;
@@ -223,7 +223,7 @@ section.body ul li:before {
   padding-right: 0.8rem;
   font-family: "Icons";
   color: #9e9f96;
-  content: "";
+  content: "\e901";
 }
 section.body blockquote {
   width: 75%;
@@ -307,7 +307,7 @@ section.body figure.testimonial > figcaption span {
   font-style: normal;
   text-align: center;
   color: #cccec0;
-  content: "";
+  content: "\e900";
 }
 .sepa-before.more-space:before {
   margin: 0.5em 0;
@@ -327,7 +327,7 @@ section.body figure.testimonial > figcaption span {
   font-style: normal;
   text-align: center;
   color: #cccec0;
-  content: "";
+  content: "\e900";
 }
 .sepa-after.more-space:after {
   margin: 0.9em 0;
@@ -521,14 +521,13 @@ form #submit.valid {
   border-color: #8b4;
 }
 form.paypal {
-  width: 96px;
+  width: 200px;
   margin: 0 auto;
   padding: 0;
 }
 form.paypal input {
   margin: 0;
   padding: 0;
-  width: auto;
   border: none;
   background: none;
 }
@@ -640,7 +639,6 @@ form #message-input, form #message-error {
   html {
     font: 17px/28px "Noto Sans", sans-serif;
   }
-
   section.body blockquote {
     font-size: 22px;
   }
@@ -697,7 +695,6 @@ form #message-input, form #message-error {
     width: 9em;
     margin-left: 310px;
   }
-
   .sepa-before.disclaimer:before, .sepa-before.donation:before, .sepa-before.contact:before {
     margin: 1.1em 0 0.6em 0;
   }
@@ -707,11 +704,9 @@ form #message-input, form #message-error {
   html {
     font: 18px/30px "Noto Sans", sans-serif;
   }
-
   header > div > nav > ul {
     font-size: 19px;
   }
-
   section.body h2 {
     font-size: 32px;
   }
@@ -745,14 +740,12 @@ form #message-input, form #message-error {
   section.body img.right {
     margin: 0 0 1.5rem 1.3rem;
   }
-
   .sepa-before:before {
     font-size: 8rem;
   }
   .sepa-before.more-space:before {
     margin: 0.7em 0;
   }
-
   .sepa-after:after {
     font-size: 8rem;
   }
@@ -762,12 +755,10 @@ form #message-input, form #message-error {
   .sepa-after.more-space2:after {
     margin: 0.8em 0 1em 0;
   }
-
   form input, form textarea, form #submit {
     padding: 8px 14px;
     font-size: 18px;
   }
-
   section.bottom-quote {
     height: 220px;
   }
@@ -818,14 +809,12 @@ form #message-input, form #message-error {
   header > div > nav > ul > li.sel > a {
     border-bottom: 4px solid rgba(255, 255, 255, 0.5);
   }
-
   section.top-image > img {
     margin-top: 68px;
   }
   section.top-image > div.text {
     top: calc(42vw - 67px);
   }
-
   section.body .wrapper {
     width: 750px;
     padding-top: 1px;
@@ -894,14 +883,12 @@ form #message-input, form #message-error {
     margin-bottom: 0;
     text-align: left;
   }
-
   section.bottom-quote {
     height: 260px;
   }
   section.bottom-quote blockquote {
     font-size: 32px;
   }
-
   footer {
     padding: 24px 1.5em;
   }
@@ -940,7 +927,6 @@ form #message-input, form #message-error {
   footer > div > nav > ul.nav2 {
     margin-left: 395px;
   }
-
   .sepa-after.more-space2:after {
     margin-top: 1.8em;
   }
@@ -975,11 +961,9 @@ form #message-input, form #message-error {
   header > div > nav > ul > li {
     padding: 28px 16px 20px 16px;
   }
-
   section.top-image > div.text > h1 {
     font-size: 120px;
   }
-
   section.body .wrapper {
     padding-top: 1px 0 0 0;
   }
@@ -998,7 +982,6 @@ form #message-input, form #message-error {
     width: 1300px;
     margin: 0 auto;
   }
-
   section.top-image > img {
     width: 1300px;
     min-height: 615px;
